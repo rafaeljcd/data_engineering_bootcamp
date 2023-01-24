@@ -135,16 +135,35 @@ docker run -d \
 
 `/var/lib/postgresql/data` this is where the postgresql will save the local data for postgres
 
-`-v /home/arthur/docker_test/ny_taxi_postgres_data:/var/lib/postgresql/data`
+`-v $(pwd)/ny_taxi_postgres_data:/var/lib/postgresql/data`
 
 Need to map the data from the docker to the host machine
 
 `-d` or `--detach` to be able to run in detach mode
 
-Also added some name to the container, so it won't be random name 
+Also added some name to the container, so it won't be random name
 
 ![](https://i.imgur.com/4rmyjKg.png)
 
 ![](https://i.imgur.com/uS1m3gZ.png)
 
 The finished setup for the postgres
+
+-----
+
+#### Setup error
+
+![](https://i.imgur.com/fsazoaY.png)
+
+`-v $(pwd)/ny_taxi_postgres_data:/var/lib/postgresql/data`
+
+Should be able to copy the data normally, but upon checking the folder. I cannot access it due to lacking admin perms
+even though I am the admin
+
+```shell
+sudo chmod a+rwx ny_taxi_postgres_data
+```
+
+This issue is also detailed on the course
+
+[Link to the said issue](https://github.com/DataTalksClub/data-engineering-zoomcamp/tree/main/week_1_basics_n_setup/2_docker_sql#linux-and-macos)
