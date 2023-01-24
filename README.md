@@ -220,3 +220,24 @@ sudo apt-get install libpq-dev
 Re-run the commands again, and now be able to access just fine.
 
 ![](https://i.imgur.com/ba0VLgG.png)
+
+---
+
+### Getting of the data
+
+Downloading of the data
+
+```shell
+wget https://github.com/DataTalksClub/nyc-tlc-data/releases/download/yellow/yellow_tripdata_2021-01.csv.gz
+gzip -d yellow_tripdata_2021-01.csv.gz
+```
+
+Added a library for the progress
+
+```shell
+source ../docker_venv/bin/activate
+pip install tqdm
+```
+
+Now proceed to the upload_data.ipynb for the append of the data to the
+postgresql
