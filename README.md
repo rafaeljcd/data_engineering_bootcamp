@@ -127,6 +127,8 @@ docker run -d \
   -v $(pwd)/ny_taxi_postgres_data:/var/lib/postgresql/data \
   -p 5432:5432 \
   postgres:13
+
+sudo chmod a+rwx ny_taxi_postgres_data
 ```
 
 `-v` or `--volume` for mounting a volume
@@ -167,3 +169,54 @@ sudo chmod a+rwx ny_taxi_postgres_data
 This issue is also detailed on the course
 
 [Link to the said issue](https://github.com/DataTalksClub/data-engineering-zoomcamp/tree/main/week_1_basics_n_setup/2_docker_sql#linux-and-macos)
+
+---
+
+### postgresql cli
+
+Install cli for postgres at the env
+
+```shell
+source ../docker_venv/bin/activate
+pip install pgcli
+```
+
+Connect to the postgres via cli
+
+```shell
+source ../docker_venv/bin/activate
+pgcli -h localhost -p 5432 -u root -d ny_taxi
+```
+
+---
+
+### Pgcli error
+
+![](https://i.imgur.com/oqk57Fo.png)
+
+```shell
+pgcli -h localhost -p 5432 -u root -d ny_taxi
+```
+
+Running the pgcli to check the connection to postgres results into the error
+
+Install the postgres library
+
+```shell
+source ../docker_venv/bin/activate
+pip install psycopg2-binary
+```
+
+And still the same error
+
+[Stackoverflow Issue](https://stackoverflow.com/a/64565388/14859274)
+
+[To the specific answer](https://stackoverflow.com/a/64565388/14859274)
+
+```shell
+sudo apt-get install libpq-dev
+```
+
+Re-run the commands again, and now be able to access just fine.
+
+![](https://i.imgur.com/ba0VLgG.png)
