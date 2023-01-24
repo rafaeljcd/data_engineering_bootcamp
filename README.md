@@ -1,4 +1,8 @@
-Starting with docker
+# Docker
+
+----
+
+## Starting with docker 
 
 To build the docker image
 
@@ -49,3 +53,15 @@ typing `exit` will exit the docker
 | `docker ps -a` | show all of the active and inactive container |
 
 ---
+
+## Running the python program
+
+```dockerfile
+FROM python:3.11.0rc1
+
+WORKDIR /code
+
+COPY ./src ./src
+
+ENTRYPOINT ["python", "src/main.py"]
+```

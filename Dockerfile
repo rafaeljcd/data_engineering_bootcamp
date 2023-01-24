@@ -4,4 +4,4 @@ WORKDIR /code
 
 COPY ./src ./src
 
-ENTRYPOINT ["bash"]
+ENTRYPOINT ["python", "src/main.py"]
