@@ -2,7 +2,7 @@
 
 ----
 
-## Starting with docker 
+## Starting with docker
 
 To build the docker image
 
@@ -84,6 +84,8 @@ COPY ./src ./src
 ENTRYPOINT ["python", "src/main.py"]
 ```
 
+---
+
 ## installing pip
 
 source ../docker_venv/bin/activate
@@ -92,3 +94,57 @@ source ../docker_venv/bin/activate
 source ../docker_venv/bin/activate
 pip freeze > requirements.txt
 ```
+
+-----
+
+## Postgresql
+
+### postgresql at docker
+
+```shell
+docker run -it \
+  -e POSTGRES_USER="root" \
+  -e POSTGRES_PASSWORD="root" \ 
+  -e POSTGRES_DB="ny_taxi" \
+  postgres:13
+```
+
+`-e` or `--env` for setting the environmental variables
+
+This is the normal setup for basic postgres at docker
+
+----
+
+#### Postgres with the configured env
+
+```shell
+docker run -d \
+  --name postgres_container \
+  -it \
+  -e POSTGRES_USER="root" \
+  -e POSTGRES_PASSWORD="root" \
+  -e POSTGRES_DB="ny_taxi" \
+  -v $(pwd)/ny_taxi_postgres_data:/var/lib/postgresql/data \
+  -p 5432:5432 \
+  postgres:13
+```
+
+`-v` or `--volume` for mounting a volume
+
+`-p` or `--publish` mapping the port from the host machine to the container
+
+`/var/lib/postgresql/data` this is where the postgresql will save the local data for postgres
+
+`-v /home/arthur/docker_test/ny_taxi_postgres_data:/var/lib/postgresql/data`
+
+Need to map the data from the docker to the host machine
+
+`-d` or `--detach` to be able to run in detach mode
+
+Also added some name to the container, so it won't be random name 
+
+![](https://i.imgur.com/4rmyjKg.png)
+
+![](https://i.imgur.com/uS1m3gZ.png)
+
+The finished setup for the postgres
