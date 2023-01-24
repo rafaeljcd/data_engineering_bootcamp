@@ -65,3 +65,5 @@ COPY ./src ./src
 
 ENTRYPOINT ["python", "src/main.py"]
 ```
+
+source ../docker_venv/bin/activate
