@@ -44,6 +44,18 @@ pgadmin and postgres database each.
 
 ## Linking two containers
 
+```mermaid
+C4Context
+    title Docker Network
+    Enterprise_Boundary(b0,"Network"){
+        System(pgadmin, "pgadmin", "docker container containing pgadmin")
+        System(postgres, "postgres", "docker container containing postgres database")
+    }
+    BiRel(pgadmin, postgres, "connection")
+    UpdateRelStyle(pgadmin, postgres, $textColor="green", $lineColor="yellow", $offsetX="0")
+    UpdateElementStyle(b0, $fontColor="red", $bgColor="transparent", $borderColor="red")
+```
+
 ### Create Network
 
 To do the linking of the two containers we must use `docker network`
