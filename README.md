@@ -7,9 +7,9 @@
 <!-- Data Engineering Bootcamp -->
 * ## Week 1
   * ### [Ingesting NY Taxi Data to Postgres](README-init.md)
-    * [Images for this session](readme_init_files)
+    * [Images for this session](files/week1/readme_init_files)
   * ### [Connecting pgAdmin and Postgres](README-postgres.md)
-    * [Images for this session](readme_postgres_files)
+    * [Images for this session](files/week1/readme_postgres_files)
   * ### [Dockerizing the Ingestion Script](README-dockerizing_ingestion_script.md)
 <!-- Data Engineering Bootcamp -->
 
