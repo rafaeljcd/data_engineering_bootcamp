@@ -12,7 +12,7 @@ docker build -t name:tag .
 
 `-t or --tag` the syntax for the following to be the name and tag
 
-`first:tag`
+`name:tag`
 
 The <u>_**name**_</u> signifies the name of the docker image
 
