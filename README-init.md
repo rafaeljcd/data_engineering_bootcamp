@@ -236,5 +236,5 @@ Added a library for the progress
 pip install tqdm
 ```
 
-Now proceed to the upload_data.ipynb for the append of the data to the
+Now proceed to the [upload_data.ipynb](upload_data.ipynb) for to append of the data to the
 postgresql
