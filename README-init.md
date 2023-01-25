@@ -88,10 +88,7 @@ ENTRYPOINT ["python", "src/main.py"]
 
 ## installing pip
 
-source ../docker_venv/bin/activate
-
 ```shell
-source ../docker_venv/bin/activate
 pip freeze > requirements.txt
 ```
 
@@ -177,14 +174,12 @@ This issue is also detailed on the course
 Install cli for postgres at the env
 
 ```shell
-source ../docker_venv/bin/activate
 pip install pgcli
 ```
 
 Connect to the postgres via cli
 
 ```shell
-source ../docker_venv/bin/activate
 pgcli -h localhost -p 5432 -u root -d ny_taxi
 ```
 
@@ -203,7 +198,6 @@ Running the pgcli to check the connection to postgres results into the error
 Install the postgres library
 
 ```shell
-source ../docker_venv/bin/activate
 pip install psycopg2-binary
 ```
 
@@ -235,7 +229,6 @@ gzip -d yellow_tripdata_2021-01.csv.gz
 Added a library for the progress
 
 ```shell
-source ../docker_venv/bin/activate
 pip install tqdm
 ```
 
