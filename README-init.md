@@ -92,6 +92,10 @@ ENTRYPOINT ["python", "src/main.py"]
 pip freeze > requirements.txt
 ```
 
+```shell
+pip install -r requirements.txt
+```
+
 -----
 
 ## Postgresql
