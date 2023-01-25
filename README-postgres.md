@@ -1,0 +1,145 @@
+To download the container of pgadmin, you can find it here.
+
+[PgAdmin docker hub](https://hub.docker.com/r/dpage/pgadmin4/)
+
+
+## Setup
+
+```shell
+docker run -it \
+ -d \
+ --name pgadmin_container \
+ -e PGADMIN_DEFAULT_EMAIL="admin@admin.com" \
+ -e PGADMIN_DEFAULT_PASSWORD="root" \
+ -p 8080:80 \
+ dpage/pgadmin4
+```
+
+This will now download the pgadmin if it is not available
+
+It will set the default env values and the port to 8080
+
+Compared to the tutorial, added a name to the docker and set it to detached mode.
+
+![](https://i.imgur.com/tBgYlSV.png)
+
+---
+
+## Add New server
+
+Now upon login, we must do add new server.
+
+But first we must ensure that the postgres container is also running.
+
+Upon adding the usual user and password, you'll be greeted with this error
+
+![](https://i.imgur.com/y2PHFTN.png)
+
+This is because pgadmin is trying to find the postgres database inside its own container via
+localhost ip but the postgres database is on another container.
+
+To resolve this error, we must somehow link the two containers containing 
+pgadmin and postgres database each.
+
+---
+
+## Linking two containers
+
+### Create Network
+
+To do the linking of the two containers we must use `docker network`
+
+[Docker Network Create](https://docs.docker.com/engine/reference/commandline/network_create/)
+
+To create docker network
+
+```shell
+docker network create pg-network
+```
+
+To check the created network, run the following command
+
+```shell
+docker network ls
+```
+
+![](https://i.imgur.com/b45ak6F.png)
+
+---
+
+### Connecting to the network
+
+[Connect Network Reference](https://docs.docker.com/engine/reference/commandline/network_create/#examples)
+
+Now we must modify the commands to enable adding to the network
+
+`--network=pg-network`
+
+We must add this new variable with the name of the network to instruct
+the postgres to connect with
+
+```shell
+docker run -d \
+  --name postgres_container \
+  -it \
+  -e POSTGRES_USER="root" \
+  -e POSTGRES_PASSWORD="root" \
+  -e POSTGRES_DB="ny_taxi" \
+  -v $(pwd)/ny_taxi_postgres_data:/var/lib/postgresql/data \
+  -p 5432:5432 \
+  --network=pg-network \
+  postgres:13
+
+sudo chmod a+rwx ny_taxi_postgres_data
+```
+
+```shell
+docker run -it \
+ -d \
+ --name pgadmin_container \
+ -e PGADMIN_DEFAULT_EMAIL="admin@admin.com" \
+ -e PGADMIN_DEFAULT_PASSWORD="root" \
+ -p 8080:80 \
+ --network=pg-network \
+ dpage/pgadmin4
+```
+
+#### Docker run error
+
+Unlike in the course materials, we have already given a name to the container.
+So when running the same commands, this will result in this error
+
+![](https://i.imgur.com/ZxebyVA.png)
+
+In order to resolve for this, we must use `docker start` instead of `docker run`
+
+[Reference](https://www.baeldung.com/ops/docker-name-already-in-use#restarting_container)
+
+```shell
+docker run -d --name postgres_container \
+  -it \
+  -e POSTGRES_USER="root" \
+  -e POSTGRES_PASSWORD="root" \
+  -e POSTGRES_DB="ny_taxi" \
+  -v $(pwd)/ny_taxi_postgres_data:/var/lib/postgresql/data \
+  -p 5432:5432 \
+  --network=pg-network \
+  postgres:13
+
+sudo chmod a+rwx ny_taxi_postgres_data
+```
+
+```shell
+pgcli -h localhost -p 5432 -u root -d ny_taxi
+```
+
+```shell
+docker run -it \
+ -d \
+ --name pgadmin_container \
+ -e PGADMIN_DEFAULT_EMAIL="admin@admin.com" \
+ -e PGADMIN_DEFAULT_PASSWORD="root" \
+ -p 8080:80 \
+ --network=pg-network \
+ dpage/pgadmin4
+```
