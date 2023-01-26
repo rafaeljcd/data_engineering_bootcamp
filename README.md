@@ -10,7 +10,8 @@
     * [Images for this session](files/week1/readme_init_files)
   * ### [Connecting pgAdmin and Postgres](README-postgres.md)
     * [Images for this session](files/week1/readme_postgres_files)
-  * ### [Dockerizing the Ingestion Script](README-dockerizing_ingestion_script.md)
+  * ### [Dockerizing the Ingestion Script](1.2.4_Dockerizing_the_Ingestion_Script.md)
+    * [Youtube](https://www.youtube.com/watch?v=B1WwATwf-vY)
 <!-- Data Engineering Bootcamp -->
 
 ---
