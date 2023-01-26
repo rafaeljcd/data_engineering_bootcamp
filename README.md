@@ -21,4 +21,4 @@
 
 ---
 
-For Pycharm wsl [Guide to auto activate the venv](README_wsl.md)
+For Pycharm wsl [Guide to auto activate the venv](wsl_setup.md)
