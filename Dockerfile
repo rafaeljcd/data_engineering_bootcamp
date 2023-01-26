@@ -8,4 +8,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY ./src ./src
 
-ENTRYPOINT ["python", "src/main.py"]
+ENTRYPOINT ["python", "src/week1/ingest_data.py"]
