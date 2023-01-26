@@ -7,15 +7,12 @@ from os.path import splitext
 from urllib.parse import urlparse
 from sqlalchemy import create_engine
 from pathlib import Path
-
-engine = create_engine(
-    'postgresql://root:root@localhost:5432/ny_taxi'
-)
+from tqdm import tqdm
 
 
-def download_csv():
-    url = "https://github.com/DataTalksClub/nyc-tlc-data/releases/download/yellow/yellow_tripdata_2021-01.csv.gz"
-
+def download_csv(
+        url: str
+) -> Path:
     # Getting the file name with extensions
     path = urlparse(url=url).path
     file_name = path.split("/")[-1]
@@ -43,20 +40,68 @@ def download_csv():
     # Use the shutil to copy the contents from the gz file to the base file
     # Note: that if you wanted to compress the file to gz file just do everything in reverse.
 
-    with open(Path(__file__).parent / extensions[0], "wb") as csv_file:
+    csv_file_path = Path(__file__).parent / extensions[0]
+    print(f"extracting {extensions[0]}...")
+    with open(csv_file_path, "wb") as csv_file:
         with gzip.open(file_path, "rb") as gz_file:
             shutil.copyfileobj(gz_file, csv_file)
 
+    return csv_file_path
 
-# if __name__ == '__main__':
-#     parser = argparse.ArgumentParser(description="Ingest CSV to postgres")
-#
-#     parser.add_argument("user", help="username for postgres")
-#     parser.add_argument("password", help="password for postgres")
-#     parser.add_argument("host", help="host for postgres")
-#     parser.add_argument("port", help="port for postgres", type=int)
-#     parser.add_argument("db", help="database name for postgres")
-#     parser.add_argument("table_name", help="name of the table where we will write the results")
-#     parser.add_argument("url", help="url of the csv file")
-#
-#     args = parser.parse_args()
+
+def main(
+        params: argparse.Namespace
+):
+    user = params.user if hasattr(params, "user") else None
+    password = params.password if hasattr(params, "password") else None
+    host = params.host if hasattr(params, "host") else None
+    port = params.port if hasattr(params, "port") else None
+    db = params.db if hasattr(params, "db") else None
+    table_name = params.table_name if hasattr(params, "table_name") else None
+    url = params.url if hasattr(params, "url") else None
+
+    if any(item is None for item in [user, password, host, port, db, table_name, url]):
+        print("Empty arguments")
+        return
+
+    # Download CSV
+    csv_file_path = download_csv(url=url)
+
+    print("creating engine")
+    # Initialized the engine
+    engine = create_engine(
+        f"postgresql://{user}:{user}@{host}:{port}/{db}"
+    )
+
+    print("reading csv")
+    df_iter = pd.read_csv(csv_file_path, iterator=True, chunksize=100_000, low_memory=False)
+
+    print("now saving to database")
+    with tqdm(iterable=df_iter) as t:
+        df: pd.DataFrame
+        for df in t:
+            if hasattr(df, "tpep_dropoff_datetime"):
+                df.tpep_dropoff_datetime = pd.to_datetime(df.tpep_dropoff_datetime)
+            if hasattr(df, "tpep_pickup_datetime"):
+                df.tpep_pickup_datetime = pd.to_datetime(df.tpep_pickup_datetime)
+            df.to_sql(name=table_name, con=engine, if_exists='append')
+
+            t.update()
+
+    print("done")
+
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description="Ingest CSV to postgres")
+
+    parser.add_argument("--user", help="username for postgres")
+    parser.add_argument("--password", help="password for postgres")
+    parser.add_argument("--host", help="host for postgres")
+    parser.add_argument("--port", help="port for postgres", type=int)
+    parser.add_argument("--db", help="database name for postgres")
+    parser.add_argument("--table_name", help="name of the table where we will write the results")
+    parser.add_argument("--url", help="url of the csv file")
+
+    args = parser.parse_args()
+
+    main(args)
