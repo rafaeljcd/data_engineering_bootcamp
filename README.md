@@ -20,6 +20,9 @@
     
   * ### [Running Postgres and pgAdmin with Docker-Compose](1.2.5_Running_Postgres_and_pgAdmin_with_Docker-Compose.md)
     * [Youtube - 1.2.5 - Running Postgres and pgAdmin with Docker-Compose](https://www.youtube.com/watch?v=hKI6PkPhpa0)
+    
+  * ### [SQL Refreshser](1.2.6_SQL_refresher.md)
+    * [Youtube - 1 .2.6 - SQL Refreshser](https://www.youtube.com/watch?v=QEcps_iskgg)
 <!-- Data Engineering Bootcamp -->
 
 ---
