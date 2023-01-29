@@ -23,6 +23,10 @@
     
   * ### [SQL Refreshser](1.2.6_SQL_refresher.md)
     * [Youtube - 1 .2.6 - SQL Refreshser](https://www.youtube.com/watch?v=QEcps_iskgg)
+    * [Images for this session](./files/week1/1.2.6_files)
+    
+  * ### [Introduction to Terraform Concepts & GCP Pre-Requisites](1.3.1_Introduction_to_Terraform_Concepts_and_GCP_Pre-Requisites.md)
+    * [Youtube - 1.3.1 - Introduction to Terraform Concepts & GCP Pre-Requisites](https://www.youtube.com/watch?v=Hajwnmj0xfQ)
 <!-- Data Engineering Bootcamp -->
 
 ---
