@@ -1,0 +1,27 @@
+version: "1.0"
+services:
+  postgres_database:
+    image: postgres:13
+    container_name: postgres_container_homework
+    volumes:
+      - pgdatabase_homework:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_DB=ny_taxi
+    ports:
+      - '5432:5432'
+  pgadmin_container:
+    container_name: pgadmin_container_homework
+    image: dpage/pgadmin4
+    volumes:
+      - pgadmin_data_homework:/var/lib/pgadmin
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=admin@admin.com
+      - PGADMIN_DEFAULT_PASSWORD=root
+    ports:
+      - '8080:80'
+volumes:
+  pgadmin_data_homework:
+  pgdatabase_homework:
+
