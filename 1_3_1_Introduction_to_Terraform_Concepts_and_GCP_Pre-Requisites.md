@@ -1,6 +1,7 @@
 # Local Setup of Terraform and GCP
 
-1. [Terraform Setup on WSL](#terraform-setup-on-wsl)
+1. [Terraform Setup](#terraform-setup)
+   1. [WSL](#wsl)
 
 2. [GCP setup](#gcp-setup)
     1. [GCP setup service account and authentication](#gcp-setup-service-account-and-authentication)
@@ -14,7 +15,9 @@
 
 ---
 
-## Terraform Setup on WSL
+## Terraform Setup
+
+### WSL
 
 1. Get the unzip module
    ```shell
@@ -43,6 +46,13 @@
    terraform -v
    ```
    ![](https://i.imgur.com/YrTcG7s.png)
+
+### MacOS
+
+```shell
+brew tap hashicorp/tap
+brew install hashicorp/tap/terraform
+```
 
 ---
 
