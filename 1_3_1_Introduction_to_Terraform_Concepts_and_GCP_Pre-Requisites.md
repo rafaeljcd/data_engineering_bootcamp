@@ -251,4 +251,4 @@ And now with all the steps done, we can now begin with the terraform part.
 
 | Return to table of contents | Next page                                                                                         |
 |-----------------------------|---------------------------------------------------------------------------------------------------|
-| [Readme.md](README.md)      | [Creating GCP Infrastructure with Terraform](1.3.2_Creating_GCP_Infrastructure_with_Terraform.md) |
+| [Readme.md](README.md)      | [Creating GCP Infrastructure with Terraform](1_3_2_Creating_GCP_Infrastructure_with_Terraform.md) |

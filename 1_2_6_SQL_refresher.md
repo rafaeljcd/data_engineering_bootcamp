@@ -423,4 +423,4 @@ order by
 
 | Return to table of contents | Next page                                                                                                                     |
 |-----------------------------|-------------------------------------------------------------------------------------------------------------------------------|
-| [Readme.md](README.md)      | [Introduction to Terraform Concepts & GCP Pre-Requisites](1.3.1_Introduction_to_Terraform_Concepts_and_GCP_Pre-Requisites.md) |
+| [Readme.md](README.md)      | [Introduction to Terraform Concepts & GCP Pre-Requisites](1_3_1_Introduction_to_Terraform_Concepts_and_GCP_Pre-Requisites.md) |

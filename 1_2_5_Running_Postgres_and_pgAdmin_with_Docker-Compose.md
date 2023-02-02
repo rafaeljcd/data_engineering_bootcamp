@@ -157,4 +157,4 @@ This is what it looks like when stopping the docker compose
 
 | Return to table of contents | Next page                                |
 |-----------------------------|------------------------------------------|
-| [Readme.md](README.md)      | [SQL Refreshser](1.2.6_SQL_refresher.md) |
+| [Readme.md](README.md)      | [SQL Refreshser](1_2_6_SQL_refresher.md) |

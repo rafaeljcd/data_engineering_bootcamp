@@ -124,4 +124,4 @@ docker run -d \
 
 | Return to table of contents | Next page                                                                                                     |
 |-----------------------------|---------------------------------------------------------------------------------------------------------------|
-| [Readme.md](README.md)      | [Running Postgres and pgAdmin with Docker-Compose](1.2.5_Running_Postgres_and_pgAdmin_with_Docker-Compose.md) |
+| [Readme.md](README.md)      | [Running Postgres and pgAdmin with Docker-Compose](1_2_5_Running_Postgres_and_pgAdmin_with_Docker-Compose.md) |

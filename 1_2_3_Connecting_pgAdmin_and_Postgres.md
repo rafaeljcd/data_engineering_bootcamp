@@ -170,4 +170,4 @@ And now it is a success connecting the two containers via `docker network`
 
 | Return to table of contents | Next page                                                                             |
 |-----------------------------|---------------------------------------------------------------------------------------|
-| [Readme.md](README.md)      | [Putting the ingestion script into Docker](1.2.4_Dockerizing_the_Ingestion_Script.md) |
+| [Readme.md](README.md)      | [Putting the ingestion script into Docker](1_2_4_Dockerizing_the_Ingestion_Script.md) |
