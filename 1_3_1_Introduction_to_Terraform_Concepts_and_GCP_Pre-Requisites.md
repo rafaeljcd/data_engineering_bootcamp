@@ -1,5 +1,19 @@
 # Local Setup of Terraform and GCP
 
+1. [Terraform Setup on WSL](#terraform-setup-on-wsl)
+
+2. [GCP setup](#gcp-setup)
+    1. [GCP setup service account and authentication](#gcp-setup-service-account-and-authentication)
+    2. [Setup GCP CLI](#setup-gcp-cli)
+    3. [Alternate setup](#alternate-setup)
+    4. [Setup access](#setup-access)
+        1. [Setup permission roles for the GCP user account](#setup-permission-roles-for-the-gcp-user-account)
+        2. [Enable APIs for the project](#enable-apis-for-the-project)
+      
+3. [Pages](#pages)
+
+---
+
 ## Terraform Setup on WSL
 
 1. Get the unzip module
@@ -175,7 +189,7 @@ To set up the GCP CLI we must follow the steps.
 
 ### Setup access
 
-#### Setup permission roles for the GCP user account.
+#### Setup permission roles for the GCP user account
 
 On the next step, we now need to create a **Google Cloud Storage**: Data Lake and **BigQuery**: Data Warehouse
 
@@ -185,7 +199,8 @@ On the next step, we now need to create a **Google Cloud Storage**: Data Lake an
 
 ---
 
-Now that the local is already authenticated with the cloud environment we now need to add permissions for the servce account
+Now that the local is already authenticated with the cloud environment we now need to add permissions for the servce
+account
 
 1. Go to IAM, find the created user and then select the `Edit Principal`
 
@@ -228,7 +243,7 @@ Now that the local is already authenticated with the cloud environment we now ne
 
 ---
 
-#### Enable APIs for the project.
+#### Enable APIs for the project
 
 When the local environment interacts with the cloud environment, it doesn't really interact with the resources, but it
 interacts with the resources via the APIs.
@@ -244,10 +259,11 @@ sometimes we must have multiple projects.
 
   ![](files/week1/1.3.1_files/api_setup/iam_service_account.png)
 
-
 And now with all the steps done, we can now begin with the terraform part.
 
 ---
+
+## Pages
 
 | Previous Page                            | Return to table of contents | Next page                                                                                         |
 |------------------------------------------|-----------------------------|---------------------------------------------------------------------------------------------------|
