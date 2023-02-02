@@ -2,6 +2,7 @@
 
 1. [Terraform Setup](#terraform-setup)
    1. [WSL](#wsl)
+   2. [MacOS](#macos)
 
 2. [GCP setup](#gcp-setup)
     1. [GCP setup service account and authentication](#gcp-setup-service-account-and-authentication)
