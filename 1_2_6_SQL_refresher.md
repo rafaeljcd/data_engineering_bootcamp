@@ -1,3 +1,25 @@
+1. [Setup](#setup)
+   1. [Pgadmin volume persist](#pgadmin-volume-persist)
+   2. [Inserting of the data to the database](#inserting-of-the-data-to-the-database)
+      1. [Jupyter for creating db and inserting data](files/week1/sql_refresher_upload.ipynb)
+2. [Lesson](#lesson)
+   1. [Initial lesson](#initial-lesson)
+   2. [Concat](#concat)
+   3. [Inner join](#inner-join)
+   4. [Left Join](#left-join)
+   5. [Right Join](#right-join)
+   6. [Outer join](#outer-join)
+   7. [Group by and order by](#group-by-and-order-by)
+      1. [Casting the date by date_trunc](#casting-the-date-by-datetrunc)
+      2. [Group by example](#group-by-example)
+      3. [Group by with order by](#group-by-with-order-by)
+      4. [With max](#with-max)
+      5. [Group by their position](#group-by-their-position)
+      6. [Chain order by](#chain-order-by)
+3. [Pages](#pages)
+
+---
+
 ## Setup
 
 This is the csv data that is going to be used for this session
@@ -72,6 +94,8 @@ Have used a jupyter notebook to insert to create the database and insert the dat
 ---
 
 ## Lesson
+
+### Initial lesson
 
 This is a normal sql query
 
@@ -420,6 +444,8 @@ order by
 ![](https://i.imgur.com/I2sSJzJ.png)
 
 ---
+
+## Pages
 
 | Previous Page                                                                                                 | Return to table of contents | Next page                                                                                                                     |
 |---------------------------------------------------------------------------------------------------------------|-----------------------------|-------------------------------------------------------------------------------------------------------------------------------|

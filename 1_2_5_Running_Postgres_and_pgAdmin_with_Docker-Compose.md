@@ -1,6 +1,15 @@
 # Docker Compose
 
-Is a utility to allow to put multiple configurations of a docker in a single file
+It is a utility to allow to put multiple configurations of a docker in a single file
+
+1. [Configuration](#configuration)
+   1. [Error when running](#error-when-running)
+   2. [Solution](#solution)
+   3. [Correct configuration](#correct-configuration)
+2. [How it looks like](#how-it-looks-like)
+3. [Pages](#pages)
+
+---
 
 ## Configuration
 
@@ -101,7 +110,7 @@ And this is the correct configuration
 
 ---
 
-### Correct confiugration
+### Correct configuration
 
 It is very important to note that spacing was very important in the docker compose
 
@@ -154,6 +163,8 @@ This is what it looks like when stopping the docker compose
 ![](https://i.imgur.com/bploamG.png)
 
 ---
+
+## Pages
 
 | Previous Page                                                                         | Return to table of contents | Next page                                |
 |---------------------------------------------------------------------------------------|-----------------------------|------------------------------------------|

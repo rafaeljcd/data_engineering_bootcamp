@@ -1,3 +1,11 @@
+1. [Initial setup](#initial-setup)
+2. [Build and run the python script](#build-and-run-the-python-script)
+   1. [Python Script](src/week1/ingest_data.py)
+3. [Add the python script to the docker](#add-the-python-script-to-the-docker)
+4. [Pages](#pages)
+
+---
+
 In this session, we need to convert the jupyter notebook into a python script
 
 ## Initial setup
@@ -121,6 +129,8 @@ docker run -d \
 ```
 
 ---
+
+## Pages
 
 | Previous Page                                                               | Return to table of contents | Next page                                                                                                     |
 |-----------------------------------------------------------------------------|-----------------------------|---------------------------------------------------------------------------------------------------------------|

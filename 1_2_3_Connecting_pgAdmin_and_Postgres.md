@@ -1,3 +1,16 @@
+1. [Pgadmin docker](#pgadmin-docker)
+2. [Setup](#setup)
+3. [Add New server](#add-new-server)
+4. [Linking two containers](#linking-two-containers)
+   1. [Illustration](#illustration)
+   2. [Create Network](#create-network)
+   3. [Connecting to the network](#connecting-to-the-network)
+      1. [Connecting to the network from two separate containers](#connecting-to-the-network-from-two-separate-containers)
+5. [Pages](#pages)
+---
+
+## Pgadmin docker
+
 To download the container of pgadmin, you can find it here.
 
 [PgAdmin docker hub](https://hub.docker.com/r/dpage/pgadmin4/)
@@ -43,6 +56,8 @@ pgadmin and postgres database each.
 ---
 
 ## Linking two containers
+
+### Illustration
 
 ```mermaid
 C4Dynamic
@@ -167,6 +182,8 @@ But instead of using `localhost`, we must use the name of the container `postgre
 And now it is a success connecting the two containers via `docker network`
 
 ---
+
+## Pages
 
 | Previous Page                                                                                                          | Return to table of contents | Next page                                                                             |
 |------------------------------------------------------------------------------------------------------------------------|-----------------------------|---------------------------------------------------------------------------------------|
