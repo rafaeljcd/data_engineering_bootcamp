@@ -24,3 +24,11 @@ And then edit it with the `venv path`
 And now restart the terminal
 
 ![](https://i.imgur.com/PKG7Btu.png)
+
+---
+
+| Return to table of contents |
+|-----------------------------|
+| [Readme.md](README.md)      |
+
+

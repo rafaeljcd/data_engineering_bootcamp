@@ -21,12 +21,16 @@
   * ### [Running Postgres and pgAdmin with Docker-Compose](1.2.5_Running_Postgres_and_pgAdmin_with_Docker-Compose.md)
     * [Youtube - 1.2.5 - Running Postgres and pgAdmin with Docker-Compose](https://www.youtube.com/watch?v=hKI6PkPhpa0)
     
-  * ### [SQL Refreshser](1.2.6_SQL_refresher.md)
+  * ### [SQL Refresher](1.2.6_SQL_refresher.md)
     * [Youtube - 1 .2.6 - SQL Refreshser](https://www.youtube.com/watch?v=QEcps_iskgg)
     * [Images for this session](./files/week1/1.2.6_files)
     
   * ### [Introduction to Terraform Concepts & GCP Pre-Requisites](1.3.1_Introduction_to_Terraform_Concepts_and_GCP_Pre-Requisites.md)
     * [Youtube - 1.3.1 - Introduction to Terraform Concepts & GCP Pre-Requisites](https://www.youtube.com/watch?v=Hajwnmj0xfQ)
+    * [Images for this session](/files/week1/1.3.1_files)
+    
+  * ### [Creating GCP Infrastructure with Terraform](1.3.2_Creating_GCP_Infrastructure_with_Terraform.md)
+    * [Youtube - 1.3.2 - Creating GCP Infrastructure with Terraform](https://www.youtube.com/watch?v=dNkEgO-CExg)
 <!-- Data Engineering Bootcamp -->
 
 ---
