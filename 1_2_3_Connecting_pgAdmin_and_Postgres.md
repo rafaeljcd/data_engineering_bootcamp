@@ -168,6 +168,6 @@ And now it is a success connecting the two containers via `docker network`
 
 ---
 
-| Return to table of contents | Next page                                                                             |
-|-----------------------------|---------------------------------------------------------------------------------------|
-| [Readme.md](README.md)      | [Putting the ingestion script into Docker](1_2_4_Dockerizing_the_Ingestion_Script.md) |
+| Previous Page                                                                                                          | Return to table of contents | Next page                                                                             |
+|------------------------------------------------------------------------------------------------------------------------|-----------------------------|---------------------------------------------------------------------------------------|
+| [Introduction to Docker and Ingesting NY Taxi Data to Postgres](1_2_1_to_1_2_2_Introduction_to_docker_and_postgres.md) | [Readme.md](README.md)      | [Putting the ingestion script into Docker](1_2_4_Dockerizing_the_Ingestion_Script.md) |

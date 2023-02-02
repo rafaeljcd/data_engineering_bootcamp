@@ -155,6 +155,6 @@ This is what it looks like when stopping the docker compose
 
 ---
 
-| Return to table of contents | Next page                                |
-|-----------------------------|------------------------------------------|
-| [Readme.md](README.md)      | [SQL Refreshser](1_2_6_SQL_refresher.md) |
+| Previous Page                                                                         | Return to table of contents | Next page                                |
+|---------------------------------------------------------------------------------------|-----------------------------|------------------------------------------|
+| [Putting the ingestion script into Docker](1_2_4_Dockerizing_the_Ingestion_Script.md) | [Readme.md](README.md)      | [SQL Refreshser](1_2_6_SQL_refresher.md) |
