@@ -1,12 +1,14 @@
-1. [Pgadmin docker](#pgadmin-docker)
-2. [Setup](#setup)
-3. [Add New server](#add-new-server)
-4. [Linking two containers](#linking-two-containers)
-   1. [Illustration](#illustration)
-   2. [Create Network](#create-network)
-   3. [Connecting to the network](#connecting-to-the-network)
-      1. [Connecting to the network from two separate containers](#connecting-to-the-network-from-two-separate-containers)
-5. [Pages](#pages)
+- [Pgadmin docker](#pgadmin-docker)
+- [Setup](#setup)
+- [Add New server](#add-new-server)
+- [Linking two containers](#linking-two-containers)
+  - [Illustration](#illustration)
+  - [Create Network](#create-network)
+  - [Connecting to the network](#connecting-to-the-network)
+    - [Docker run error](#docker-run-error)
+  - [Connecting to the network from two separate containers](#connecting-to-the-network-from-two-separate-containers)
+- [Pages](#pages)
+
 ---
 
 ## Pgadmin docker

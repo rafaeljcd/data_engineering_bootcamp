@@ -1,8 +1,8 @@
-1. [Initial setup](#initial-setup)
-2. [Build and run the python script](#build-and-run-the-python-script)
-   1. [Python Script](src/week1/ingest_data.py)
-3. [Add the python script to the docker](#add-the-python-script-to-the-docker)
-4. [Pages](#pages)
+- [Initial setup](#initial-setup)
+- [Build and run the python script](#build-and-run-the-python-script)
+- [Add the python script to the docker](#add-the-python-script-to-the-docker)
+- [Pages](#pages)
+
 
 ---
 

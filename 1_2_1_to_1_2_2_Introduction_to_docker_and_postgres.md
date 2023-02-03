@@ -1,16 +1,18 @@
 # Docker
 
-1. [Starting with docker](#starting-with-docker)
-2. [Running the python program](#running-the-python-program)
-3. [installing pip](#installing-pip)
-4. [Postgresql](#postgresql)
-   1. [postgresql at docker](#postgresql-at-docker)
-      1. [Postgres with the configured env](#postgres-with-the-configured-env)
-      2. [Setup error](#setup-error)
-   2. [postgresql cli](#postgresql-cli)
-   3. [Pgcli error](#pgcli-error)
-   4. [Getting of the data](#getting-of-the-data)
-5. [Pages](#pages)
+- [Docker](#docker)
+  - [Starting with docker](#starting-with-docker)
+  - [Running the python program](#running-the-python-program)
+  - [installing pip](#installing-pip)
+  - [Postgresql](#postgresql)
+    - [postgresql at docker](#postgresql-at-docker)
+      - [Postgres with the configured env](#postgres-with-the-configured-env)
+      - [Setup error](#setup-error)
+    - [postgresql cli](#postgresql-cli)
+    - [Pgcli error](#pgcli-error)
+    - [Getting of the data](#getting-of-the-data)
+  - [Pages](#pages)
+
 
 ----
 

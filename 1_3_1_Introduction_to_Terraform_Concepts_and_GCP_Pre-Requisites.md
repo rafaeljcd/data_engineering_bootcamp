@@ -1,18 +1,18 @@
 # Local Setup of Terraform and GCP
 
-1. [Terraform Setup](#terraform-setup)
-   1. [WSL](#wsl)
-   2. [MacOS](#macos)
+- [Local Setup of Terraform and GCP](#local-setup-of-terraform-and-gcp)
+  - [Terraform Setup](#terraform-setup)
+    - [WSL](#wsl)
+    - [MacOS](#macos)
+  - [GCP setup](#gcp-setup)
+    - [GCP setup service account and authentication](#gcp-setup-service-account-and-authentication)
+    - [Setup GCP CLI](#setup-gcp-cli)
+    - [Alternate setup.](#alternate-setup)
+    - [Setup access](#setup-access)
+      - [Setup permission roles for the GCP user account](#setup-permission-roles-for-the-gcp-user-account)
+      - [Enable APIs for the project](#enable-apis-for-the-project)
+  - [Pages](#pages)
 
-2. [GCP setup](#gcp-setup)
-    1. [GCP setup service account and authentication](#gcp-setup-service-account-and-authentication)
-    2. [Setup GCP CLI](#setup-gcp-cli)
-    3. [Alternate setup](#alternate-setup)
-    4. [Setup access](#setup-access)
-        1. [Setup permission roles for the GCP user account](#setup-permission-roles-for-the-gcp-user-account)
-        2. [Enable APIs for the project](#enable-apis-for-the-project)
-      
-3. [Pages](#pages)
 
 ---
 
