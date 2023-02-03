@@ -22,7 +22,7 @@
     * [Youtube - 1.2.5 - Running Postgres and pgAdmin with Docker-Compose](https://www.youtube.com/watch?v=hKI6PkPhpa0)
     
   * ### [SQL Refresher](1_2_6_SQL_refresher.md)
-    * [Youtube - 1 .2.6 - SQL Refreshser](https://www.youtube.com/watch?v=QEcps_iskgg)
+    * [Youtube - 1 .2.6 - SQL Refresher](https://www.youtube.com/watch?v=QEcps_iskgg)
     * [Images for this session](./files/week1/1.2.6_files)
     
   * ### [Introduction to Terraform Concepts & GCP Pre-Requisites](1_3_1_Introduction_to_Terraform_Concepts_and_GCP_Pre-Requisites.md)

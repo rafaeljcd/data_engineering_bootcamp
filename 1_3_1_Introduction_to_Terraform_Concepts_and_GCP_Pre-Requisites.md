@@ -265,6 +265,6 @@ And now with all the steps done, we can now begin with the terraform part.
 
 ## Pages
 
-| Previous Page                            | Return to table of contents | Next page                                                                                         |
-|------------------------------------------|-----------------------------|---------------------------------------------------------------------------------------------------|
-| [SQL Refreshser](1_2_6_SQL_refresher.md) | [Readme.md](README.md)      | [Creating GCP Infrastructure with Terraform](1_3_2_Creating_GCP_Infrastructure_with_Terraform.md) |
+| Previous Page                           | Return to table of contents | Next page                                                                                         |
+|-----------------------------------------|-----------------------------|---------------------------------------------------------------------------------------------------|
+| [SQL Refresher](1_2_6_SQL_refresher.md) | [Readme.md](README.md)      | [Creating GCP Infrastructure with Terraform](1_3_2_Creating_GCP_Infrastructure_with_Terraform.md) |
