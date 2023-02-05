@@ -31,6 +31,10 @@
     
   * ### [Creating GCP Infrastructure with Terraform](1_3_2_Creating_GCP_Infrastructure_with_Terraform.md)
     * [Youtube - 1.3.2 - Creating GCP Infrastructure with Terraform](https://www.youtube.com/watch?v=dNkEgO-CExg)
+    * [Images for this session](files/week1/1_3_2_files)
+    
+  * ### [Setting up the Environment on Google Cloud](1_4_1_Setting_up_the_Environment_on_Google_Cloud.md)
+    * [Youtube - 1.4.1 - Setting up the Environment on Google Cloud](https://www.youtube.com/watch?v=ae-CV2KfoN0)
 <!-- Data Engineering Bootcamp -->
 
 ---
