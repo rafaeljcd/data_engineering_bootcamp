@@ -55,7 +55,7 @@ TFEnv https://github.com/tfutils/tfenv, so we don't have to create a Terraform v
 
 This is where the configuration of resources of your Terraform files.
 
-[Link to the file](main.tf)
+[Link to the file](files/week1/terraform/main.tf)
 
 #### Import Section
 
