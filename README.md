@@ -28,7 +28,7 @@
 
 ## Week 2: Workflow Orchestration
 
-- ### [ 2.1.1 - Data Lake](2_1_1_Data_Lake.md)
+- ### [Data Lake](2_1_1_Data_Lake.md)
 
 ---
 
