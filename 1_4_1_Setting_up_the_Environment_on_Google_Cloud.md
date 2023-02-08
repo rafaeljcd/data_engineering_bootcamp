@@ -1,8 +1,16 @@
 - [Introduction](#introduction)
 - [SSH key](#ssh-key)
-    - [Documentation](#documentation)
-    - [Instructions](#instructions)
+  - [Documentation](#documentation)
+  - [Instructions](#instructions)
 - [Create Virtual Machine Instance](#create-virtual-machine-instance)
+- [Connect to Virtual Machine Instance via SSH](#connect-to-virtual-machine-instance-via-ssh)
+- [Set up SSH Config for VM Instance access](#set-up-ssh-config-for-vm-instance-access)
+- [Configure VSCode to connect to the Virtual Machine Instance](#configure-vscode-to-connect-to-the-virtual-machine-instance)
+  - [Remote SSH code 255 in windows](#remote-ssh-code-255-in-windows)
+    - [Error](#error)
+    - [Pre-requisite](#pre-requisite)
+    - [Solution](#solution)
+- [Set up the Virtual Machine Instance](#set-up-the-virtual-machine-instance)
 - [Page](#page)
 
 ---
@@ -128,7 +136,172 @@ GCP https://cloud.google.com/compute/docs/connect/create-ssh-keys
 
        ![](https://i.imgur.com/u4mlqEg.png)
 
-6. And now, the Virtual Machine Instance is now created.
+6. Wait for the Instance to be created.
+
+   ![](https://i.imgur.com/7jSxgWP.png)
+
+7. The Virtual Machine Instance is now created. You can now also see the External IP for us to access the instance.
+
+   ![](https://i.imgur.com/GCehM2u.png)
+
+---
+
+## Connect to Virtual Machine Instance via SSH
+
+1. To connect to the Virtual Machine Instance via SSH, typed in the terminal.
+
+   ```shell
+   ssh -i ~/.ssh/<PRIVATE-KEY> <USERNAME>@<IP-Address>
+   ```
+
+   ```shell
+   ssh -i ~/.ssh/gcp rafael@<IP-Address>
+   ```
+
+   The IP Address here is the external ip given by the Virtual Machine Instance.
+
+2. Typed in `yes` to connect.
+
+   ![](https://i.imgur.com/3U9Pb7I.png)
+
+3. Wait to established connection and then you'll be able to be connected.
+
+   ![](https://i.imgur.com/NR2Jlcb.png)
+
+And since this is deployed to GCP, it also has already a pre-installed gcloud CLI
+
+## Set up SSH Config for VM Instance access
+
+1. Create config file.
+
+   ```shell
+   cd ~/.ssh
+   touch config
+   ```
+2. Now edit the `config` file.
+
+   ```
+   Host <alias>
+    Hostname <IP-Address>
+    User <USERNAME>
+    IdentityFile <PATH-TO-PRIVATE KEY>
+   ```
+3. Now you can connect via
+
+   ```shell
+   ssh <host-alias>
+   ```
+
+   ![](https://i.imgur.com/uqnEYrO.png)
+
+---
+
+## Configure VSCode to connect to the Virtual Machine Instance
+
+1. Check on the Extensions if you got `Remote SSH` Extension
+
+   ![](https://i.imgur.com/UyRMVW4.png)
+
+2. Press `Ctrl + Shift + P` to show the `Command Palette` and then typed in `Remote SSH`. Find the Connect to Host.
+
+   ![](https://i.imgur.com/Sn3SAkp.png)
+
+3. Select the `de-zoomcamp` from the configured ssh host
+
+   ![](https://i.imgur.com/5o4Iwng.png)
+
+   Just in case, If using WSL and you didn't see it, make sure to restart vscode.
+
+### Remote SSH code 255 in windows
+
+The version used during this time is `0.96.0`
+
+#### Error
+
+![](https://i.imgur.com/vifpFy1.png)
+
+The caused of this error is due to the `cmd.exe` not finding the `ssh.exe` even though if you use powershell it will be
+able to find the `ssh.exe` with no problems.
+
+#### Pre-requisite
+
+In order to resolve this issue, users must ensure that they have the following installed in their system.
+
+- OpenSSH
+    - [Install SSH in windows](https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=gui)
+- Git
+    - [Install Git in windows](https://git-scm.com/downloads)
+
+#### Solution
+
+1. Check the environmental path.
+
+   Windows Search > environmental variables > User variables for <USER> > Locate Path > Click `Edit`
+
+2. Add this to Git SSH to the end.
+
+   `C:\Program Files\Git\usr\bin`
+
+   On the next time it is reboot, you will do the opposite and remote that `C:\Program Files\Git\usr\bin` at the very
+   end.
+
+3. Open `cmd.exe` and confirm with
+
+   ```
+   ssh
+   ```
+
+   If there is an output that indicates the usage of `ssh`, it means it is successful.
+
+   ![](https://i.imgur.com/OJ8z93C.png)
+
+   [Source - freebsd](https://man.freebsd.org/cgi/man.cgi?query=ssh&sektion=1&manpath=OpenBSD)
+
+---
+
+## Set up the Virtual Machine Instance
+
+1. Download Anaconda from the website and install it.
+
+   https://www.anaconda.com/products/distribution#Downloads
+
+   ```shell
+   wget https://repo.anaconda.com/archive/Anaconda3-2022.10-Linux-x86_64.sh
+   ```
+
+   Install Anaconda
+
+   ```shell
+   bash Anaconda3-2022.10-Linux-x86_64.sh
+   ```
+
+   ![](https://i.imgur.com/vxCJKz2.png)
+
+2. Scroll down the license terms, and typed in `yes` to the agreement.
+
+   ![](https://i.imgur.com/ar4D4Bz.png)
+
+3. Agree to making Anaconda Initilizer.
+
+   ![](https://i.imgur.com/viS2IZl.png)
+
+4. Now restart to connect to the Virtual Machine Instance, and you'll be able to login with the Anaconda env.
+
+   ![](https://i.imgur.com/uqnEYrO.png)
+
+   Alternatively, you can use `source ~/.bashrc` to reload the terminal.
+
+   ```shell
+   source ~/.bashrc
+   ```
+
+5. Install `Docker` to the Virtual Machine Instance.
+
+   https://docs.docker.com/engine/install/ubuntu/
+
+   ```
+   
+   ```
 
 ---
 
