@@ -11,6 +11,20 @@
     - [Pre-requisite](#pre-requisite)
     - [Solution](#solution)
 - [Set up the Virtual Machine Instance](#set-up-the-virtual-machine-instance)
+- [Port Forwarding to local machine](#port-forwarding-to-local-machine)
+  - [Port Forwarding Instructions](#port-forwarding-instructions)
+  - [Testing on Local Machine](#testing-on-local-machine)
+- [Terraform on Virtual Machine](#terraform-on-virtual-machine)
+  - [Install Terraform](#install-terraform)
+  - [Transfer the GCP Service Account Key](#transfer-the-gcp-service-account-key)
+    - [For Windows Transfer via WinSCP](#for-windows-transfer-via-winscp)
+    - [For SFTP transfer via CLI](#for-sftp-transfer-via-cli)
+  - [Perform Terraform](#perform-terraform)
+    - [Login the gcloud service account in CLI](#login-the-gcloud-service-account-in-cli)
+    - [Terraform commands](#terraform-commands)
+- [Virtual Machine Actions](#virtual-machine-actions)
+  - [Turn off virtual machine](#turn-off-virtual-machine)
+  - [Turn on virtual machine](#turn-on-virtual-machine)
 - [Page](#page)
 
 ---
@@ -295,18 +309,257 @@ In order to resolve this issue, users must ensure that they have the following i
    source ~/.bashrc
    ```
 
-5. Install `Docker` to the Virtual Machine Instance.
+5. Install `Docker` and `docker compose` to the Virtual Machine Instance.
 
-   https://docs.docker.com/engine/install/ubuntu/
+   https://docs.docker.com/engine/install/ubuntu/#install-using-the-convenience-script
+
+   ```shell
+   curl -fsSL https://get.docker.com -o get-docker.sh
+   sudo sh get-docker.sh
+   ```
+
+   Invoke the command to check if `docker` is installed correctly.
 
    ```
+   docker
+   ```
+
+   Invoke the command to check if `docker compose` is installed correctly.
+
+   ```
+   docker compose
+   ```
+
+6. Perform adding user to the docker group to invoke docker without sudo.
+
+   https://github.com/sindresorhus/guides/blob/main/docker-without-sudo.md
+
+    1. create docker group
+
+       ```shell
+       sudo groupadd docker
+       ```
+
+    2. Add user to the docker group
+
+       ```shell
+       sudo gpasswd -a $USER docker
+       ```
+    3. restart docker service
+
+       ```shell
+       sudo service docker restart
+       ```
+
+       or alternatively, you can reboot the VM to take effect.
+
+   ![](https://i.imgur.com/AGT0J0a.png)
+
+7. Copy the Data Engineering Course repository.
+
+   ```shell
+   git clone https://github.com/DataTalksClub/data-engineering-zoomcamp.git
+   ```
+
+8. Run the docker compose for the pgadmin and postgres database
+
+    1. Go to the folder
+
+       ```shell
+       cd data-engineering-zoomcamp/week_1_basics_n_setup/2_docker_sql
+       ```
+
+    2. Run the docker compose
+
+       ```shell
+       docker compose up -d
+       ```
+
+    3. Check if it is running
+
+       ```
+       docker ps
+       ```
+
+9. Install the postgres cli and check if it is running.
+   1. Install
+   
+      ```shell
+      pip install pgcli
+      ```
+   
+   2. Check
+
+      ```shell
+      pgcli -h localhost -U root -d ny_taxi
+      ```
+   
+   3. Check if the table is created.
+
+      ```shell
+      \dt
+      ```
+
+      ![](https://i.imgur.com/Sw0vOMh.png)
+
+---
+
+## Port Forwarding to local machine
+
+### Port Forwarding Instructions
+
+We're going to port forward the remote VM to our local machine in order to interact with our local machine.
+
+1. Open the Remote SSH to our GCP Virtual Machine
+   
+2. Open New Terminal or use
    
    ```
+   Ctrl+Shift+`
+   ```
+   
+   ![](https://i.imgur.com/tGGel2g.png)
+
+3. On the new terminal, Go to the `Ports` tab and then click `forward port`.
+   
+   ![](https://i.imgur.com/ZncKMxw.png)
+
+4. Now add the following ports
+   1. `5432` for postgres database
+   2. `8080` for pgadmin
+   
+   ![](https://i.imgur.com/OK8IFvX.png)
+
+### Testing on Local Machine
+
+Opening the browser and Go to `localhost:8080`, and you'll see that the pgadmin works.
+
+![](https://i.imgur.com/UiVpkCc.png)
+
+You can also add the new server in order to check if the postgres database is also available on the local machine.
+
+Check the container name by using `docker ps`
+
+![](https://i.imgur.com/hM01Fmn.png)
+
+Copy the container name and use that for the `Hostname` in the pgadmin.
+
+![](https://i.imgur.com/gq7IDar.png)
+
+You can now see that the Database is loaded successfully.
+
+![](https://i.imgur.com/0Kx92yz.png)
+
+---
+
+## Terraform on Virtual Machine
+
+### Install Terraform
+
+Follow the Setup on the another Markdown for installation
+
+The WSL setup should be the same as the Linux.
+
+[Install Terraform on Linux](1_3_1_Introduction_to_Terraform_Concepts_and_GCP_Pre-Requisites.md#wsl)
+
+### Transfer the GCP Service Account Key
+
+#### For Windows Transfer via WinSCP
+
+1. Download the Winscp.
+   
+   https://winscp.net/eng/download.php
+
+2. Enter the following details: 
+   1. `Host Name` for the VM Ip address
+   2. `User name` for the User of the VM
+   3. `Password` for the password of the VM. But this is optional since we didn't add password.
+
+   Afterwards, Click the advanced
+
+   ![](https://i.imgur.com/xdNAqnY.png)
+
+3. Select the private key and let the WinSCP convert it to PuTTY private key format and then hit save.
+   
+   ![](https://i.imgur.com/xm4kzbr.png)
+
+4. Click `ok` and then click `Login`
+   
+   ![](https://i.imgur.com/9gUQQAH.png)
+
+   ![](https://i.imgur.com/DycoJy2.png)
+
+5. Proceed to locate the file and then transfer it to the VM by drag-and-drop.
+
+#### For SFTP transfer via CLI
+
+Since we already have ssh config we can just call
+
+Make sure where we call the `sftp` command is the same directory where `<SERVICE-ACCOUNT>.json` is located for easier uploading of file.
+
+```
+sftp de-zoomcamp
+```
+
+![](https://i.imgur.com/LHJRXXB.png)
+
+And then use `put` command to upload the file
+
+```
+put <SERVICE-ACCOUNT>.json
+```
+
+![](https://i.imgur.com/RW7QbVI.png)
+
+After uploading use `exit` to exit the `sftp`
+
+
+### Perform Terraform
+
+#### Login the gcloud service account in CLI
+
+Perform the steps in the other page for login
+
+[Login with gcloud CLI](1_3_1_Introduction_to_Terraform_Concepts_and_GCP_Pre-Requisites.md#alternate-setup)
+
+#### Terraform commands
+
+Perform testing if you can use the terraform commands.
+
+The instructions should be the same as the previous lesson before that is hyperlink below.
+
+[Terraform Commands](1_3_2_Creating_GCP_Infrastructure_with_Terraform.md#terraform-commands)
+
+---
+
+## Virtual Machine Actions
+
+### Turn off virtual machine
+
+Since the VM is Linux you can run the command to turn off the Virtual Machine.
+
+```
+sudo shutdown -h now
+```
+
+Alternatively, you can go to the browser and Click the Kehab menu and click `Stop` in order to turn off the Virtual Machine.
+
+![](https://i.imgur.com/IotL8VU.png)
+
+Once you can no longer the external IP then it is already stopped.
+
+### Turn on virtual machine
+
+To turn it on from the off state. Click the Kehab Menu and the click `Start/Resume`
+
+![](https://i.imgur.com/RI6DSyL.png)
+
+
 
 ---
 
 ## Page
 
 | Previous                                                                                          | Return to table of contents |
-| ------------------------------------------------------------------------------------------------- | --------------------------- |
+|---------------------------------------------------------------------------------------------------|-----------------------------|
 | [Creating GCP Infrastructure with Terraform](1_3_2_Creating_GCP_Infrastructure_with_Terraform.md) | [Readme.md](README.md)      |
