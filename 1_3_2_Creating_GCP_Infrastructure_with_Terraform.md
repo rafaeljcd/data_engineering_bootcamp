@@ -359,6 +359,6 @@ And upon checking in the GCP, the resources created are indeed gone.
 
 ## Page
 
-| Previous                                                                                                                      | Return to table of contents | Next                                                                                              |
-|-------------------------------------------------------------------------------------------------------------------------------|-----------------------------|---------------------------------------------------------------------------------------------------|
-| [Introduction to Terraform Concepts & GCP Pre-Requisites](1_3_1_Introduction_to_Terraform_Concepts_and_GCP_Pre-Requisites.md) | [Readme.md](README.md)      | [Setting up the Environment on Google Cloud](1_4_1_Setting_up_the_Environment_on_Google_Cloud.md) |
+| Previous                                                                                                                      | table of contents      | Next                                                                                              |
+|-------------------------------------------------------------------------------------------------------------------------------|------------------------|---------------------------------------------------------------------------------------------------|
+| [Introduction to Terraform Concepts & GCP Pre-Requisites](1_3_1_Introduction_to_Terraform_Concepts_and_GCP_Pre-Requisites.md) | [Readme.md](README.md) | [Setting up the Environment on Google Cloud](1_4_1_Setting_up_the_Environment_on_Google_Cloud.md) |

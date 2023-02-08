@@ -448,6 +448,6 @@ order by
 
 ## Pages
 
-| Previous Page                                                                                                 | Return to table of contents | Next page                                                                                                                     |
-|---------------------------------------------------------------------------------------------------------------|-----------------------------|-------------------------------------------------------------------------------------------------------------------------------|
-| [Running Postgres and pgAdmin with Docker-Compose](1_2_5_Running_Postgres_and_pgAdmin_with_Docker-Compose.md) | [Readme.md](README.md)      | [Introduction to Terraform Concepts & GCP Pre-Requisites](1_3_1_Introduction_to_Terraform_Concepts_and_GCP_Pre-Requisites.md) |
+| Previous Page                                                                                                 | table of contents      | Next page                                                                                                                     |
+|---------------------------------------------------------------------------------------------------------------|------------------------|-------------------------------------------------------------------------------------------------------------------------------|
+| [Running Postgres and pgAdmin with Docker-Compose](1_2_5_Running_Postgres_and_pgAdmin_with_Docker-Compose.md) | [Readme.md](README.md) | [Introduction to Terraform Concepts & GCP Pre-Requisites](1_3_1_Introduction_to_Terraform_Concepts_and_GCP_Pre-Requisites.md) |

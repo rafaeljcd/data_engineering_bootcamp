@@ -258,6 +258,6 @@ postgresql
 
 ## Pages
 
-| Return to table of contents | Next page                                                                   |
-|-----------------------------|-----------------------------------------------------------------------------|
-| [Readme.md](README.md)      | [Connecting pgAdmin and Postgres](1_2_3_Connecting_pgAdmin_and_Postgres.md) |
+| table of contents      | Next page                                                                   |
+|------------------------|-----------------------------------------------------------------------------|
+| [Readme.md](README.md) | [Connecting pgAdmin and Postgres](1_2_3_Connecting_pgAdmin_and_Postgres.md) |
