@@ -215,16 +215,16 @@ account
 
 1. Go to IAM, find the created user and then select the `Edit Principal`
 
-   ![](files/week1/1.3.1_files/project_setup/gcp_iam.png)
+   ![](files/week1/1_3_1_files/project_setup/gcp_iam.png)
 
-   ![](files/week1/1.3.1_files/iam_setup/iam_edit_principal.png)
+   ![](files/week1/1_3_1_files/iam_setup/iam_edit_principal.png)
 
    In this course, the permissions will be kept simple, but it is not advisable for the production environment.
 
 2. In order to add permissions for the Google Cloud Storage
     1. Click the `ADD ANOTHER ROLE`
 
-       ![](files/week1/1.3.1_files/iam_setup/iam_add_role.png)
+       ![](files/week1/1_3_1_files/iam_setup/iam_add_role.png)
     2. In order to control over Google Cloud Storage bucket, we will need `Storage Admin`
 
        This role will give us the permission to create buckets
@@ -233,24 +233,24 @@ account
 
        But in production we need to set it to a particular bucket.
 
-       ![](files/week1/1.3.1_files/iam_setup/iam_storage_admin.png)
+       ![](files/week1/1_3_1_files/iam_setup/iam_storage_admin.png)
 
     3. We also need `Storage Cloud admin` to control Google Cloud Storage objects.
 
-       ![](files/week1/1.3.1_files/iam_setup/iam_storage_cloud_admin.png)
+       ![](files/week1/1_3_1_files/iam_setup/iam_storage_cloud_admin.png)
 
 3. In order to add permissions for the BigQuery
     1. Repeat the steps of `ADD ANOTHER ROLE`
     2. Add the `BigQuery Admin`, although in real production we need to step up a more granular permission.
-       ![](files/week1/1.3.1_files/iam_setup/iam_big_query_admin.png)
+       ![](files/week1/1_3_1_files/iam_setup/iam_big_query_admin.png)
 
 4. Once all the steps are done, hit the `Save` button.
 
-   ![](files/week1/1.3.1_files/iam_setup/iam_save_roles.png)
+   ![](files/week1/1_3_1_files/iam_setup/iam_save_roles.png)
 
 5. And now you can see that you successfully added all the permissions.
 
-   ![](files/week1/1.3.1_files/iam_setup/iam_done_saving.png)
+   ![](files/week1/1_3_1_files/iam_setup/iam_done_saving.png)
 
 ---
 
@@ -264,11 +264,11 @@ sometimes we must have multiple projects.
 
 - https://console.cloud.google.com/apis/library/iam.googleapis.com
 
-  ![](files/week1/1.3.1_files/api_setup/api_iam.png)
+  ![](files/week1/1_3_1_files/api_setup/api_iam.png)
 
 - https://console.cloud.google.com/apis/library/iamcredentials.googleapis.com
 
-  ![](files/week1/1.3.1_files/api_setup/iam_service_account.png)
+  ![](files/week1/1_3_1_files/api_setup/iam_service_account.png)
 
 And now with all the steps done, we can now begin with the terraform part.
 
@@ -277,7 +277,7 @@ And now with all the steps done, we can now begin with the terraform part.
 ## Resources
 
 - [Youtube - 1.3.1 - Introduction to Terraform Concepts & GCP Pre-Requisites](https://www.youtube.com/watch?v=Hajwnmj0xfQ)
-- [Images for this session](/files/week1/1.3.1_files)
+- [Images for this session](/files/week1/1_3_1_files)
 
 ---
 

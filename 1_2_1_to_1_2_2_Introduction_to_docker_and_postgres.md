@@ -260,7 +260,7 @@ postgresql
 
 - [Youtube - 1.2.1 - Introduction to Docker](https://www.youtube.com/watch?v=EYNwNlOrpr0)
 - [Youtube - 1.2.2 - Ingesting NY Taxi Data to Postgres](https://www.youtube.com/watch?v=2JM-ziJt0WI)
-- [Images for this session](files/week1/1.2.1_to_1.2.2_Introduction_to_docker_and_postgres_files)
+- [Images for this session](files/week1/1_2_1_to_1_2_2_Introduction_to_docker_and_postgres_files)
 
 
 ---

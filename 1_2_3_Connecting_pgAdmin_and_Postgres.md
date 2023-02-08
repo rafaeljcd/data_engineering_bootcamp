@@ -189,7 +189,7 @@ And now it is a success connecting the two containers via `docker network`
 ## Resources
 
 - [Youtube - 1.2.3 - Connecting pgAdmin and Postgres](https://www.youtube.com/watch?v=hCAIVe9N0ow)
-- [Images for this session](files/week1/1.2.3_Connecting_pgAdmin_and_Postgres_files)
+- [Images for this session](files/week1/1_2_3_Connecting_pgAdmin_and_Postgres_files)
 
 ---
 

@@ -450,7 +450,7 @@ order by
 ## Resources
 
 - [Youtube - 1 .2.6 - SQL Refresher](https://www.youtube.com/watch?v=QEcps_iskgg)
-- [Images for this session](./files/week1/1.2.6_files)
+- [Images for this session](./files/week1/1_2_6_files)
 
 ---
 
