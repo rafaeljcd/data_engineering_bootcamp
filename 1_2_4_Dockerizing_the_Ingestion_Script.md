@@ -1,6 +1,7 @@
 - [Initial setup](#initial-setup)
 - [Build and run the python script](#build-and-run-the-python-script)
   - [Code](#code)
+  - [Terminal](#terminal)
 - [Add the python script to the docker](#add-the-python-script-to-the-docker)
 - [Pages](#pages)
 
@@ -27,10 +28,6 @@ Run the python script with the args
 The script is also design that if there are no args inserted then it will not continue.
 
 [Python script](src/week1/ingest_data.py)
-
-<details>
-
-<summary>Python Script</summary>
 
 ### Code
 ```python
@@ -144,8 +141,8 @@ if __name__ == '__main__':
     main(args)
 
 ```
-</details>
 
+### Terminal
 
 ```shell
 python3 src/week1/ingest_data.py \
