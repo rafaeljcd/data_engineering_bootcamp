@@ -1,7 +1,8 @@
 # **Data Engineering Bootcamp**
 
-| [Course Link](https://github.com/DataTalksClub/data-engineering-zoomcamp) | [My Own Repository](https://github.com/rafaeljcd/data_engineering_bootcamp) |
+| https://github.com/DataTalksClub                                          | https://github.com/rafaeljcd                                                |
 |---------------------------------------------------------------------------|-----------------------------------------------------------------------------|
+| [Course Link](https://github.com/DataTalksClub/data-engineering-zoomcamp) | [My Own Repository](https://github.com/rafaeljcd/data_engineering_bootcamp) |
 
 ---
 
