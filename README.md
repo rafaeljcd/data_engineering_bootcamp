@@ -5,7 +5,7 @@
 ---
 
 <!-- Data Engineering Bootcamp -->
-* ## Week 1
+* ## Week 1: Basics and setup
   * ### [Introduction to Docker and Ingesting NY Taxi Data to Postgres](1_2_1_to_1_2_2_Introduction_to_docker_and_postgres.md)
     * [Youtube - 1.2.1 - Introduction to Docker](https://www.youtube.com/watch?v=EYNwNlOrpr0)
     * [Youtube - 1.2.2 - Ingesting NY Taxi Data to Postgres](https://www.youtube.com/watch?v=2JM-ziJt0WI)
@@ -35,6 +35,11 @@
     
   * ### [Setting up the Environment on Google Cloud](1_4_1_Setting_up_the_Environment_on_Google_Cloud.md)
     * [Youtube - 1.4.1 - Setting up the Environment on Google Cloud](https://www.youtube.com/watch?v=ae-CV2KfoN0)
+    * [Images for this session](files/week1/1_4_1_files)
+    
+* ## Week 2: Workflow Orchestration
+  * ### [ 2.1.1 - Data Lake](2_1_1_Data_Lake.md)
+    * [Youtube - 2.1.1 - Data Lake](https://www.youtube.com/watch?v=W3Zm6rjOq70)
 <!-- Data Engineering Bootcamp -->
 
 ---
