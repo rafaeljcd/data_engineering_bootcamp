@@ -30,6 +30,8 @@
 
 - ### [Data Lake](2_1_1_Data_Lake.md)
 
+- ### [Introduction to Workflow orchestration](2_2_1_Introduction_to_Workflow_orchestration.md)
+
 ---
 
 ## Technologies
