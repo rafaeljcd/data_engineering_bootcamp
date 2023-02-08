@@ -1,30 +1,34 @@
 - [Introduction](#introduction)
 - [SSH key](#ssh-key)
-  - [Documentation](#documentation)
-  - [Instructions](#instructions)
+    - [Documentation](#documentation)
+    - [Instructions](#instructions)
 - [Create Virtual Machine Instance](#create-virtual-machine-instance)
 - [Connect to Virtual Machine Instance via SSH](#connect-to-virtual-machine-instance-via-ssh)
 - [Set up SSH Config for VM Instance access](#set-up-ssh-config-for-vm-instance-access)
 - [Configure VSCode to connect to the Virtual Machine Instance](#configure-vscode-to-connect-to-the-virtual-machine-instance)
-  - [Remote SSH code 255 in windows](#remote-ssh-code-255-in-windows)
-    - [Error](#error)
-    - [Pre-requisite](#pre-requisite)
-    - [Solution](#solution)
+    - [Remote SSH code 255 in windows](#remote-ssh-code-255-in-windows)
+        - [Error](#error)
+        - [Pre-requisite](#pre-requisite)
+        - [Solution](#solution)
 - [Set up the Virtual Machine Instance](#set-up-the-virtual-machine-instance)
 - [Port Forwarding to local machine](#port-forwarding-to-local-machine)
-  - [Port Forwarding Instructions](#port-forwarding-instructions)
-  - [Testing on Local Machine](#testing-on-local-machine)
+    - [Port Forwarding Instructions](#port-forwarding-instructions)
+    - [Testing on Local Machine](#testing-on-local-machine)
+    - [Port Forwarding Jupyter Notebook](#port-forwarding-jupyter-notebook)
+        - [Open the Jupyter Notebook Port](#open-the-jupyter-notebook-port)
+        - [Jupyter Notebook Usage](#jupyter-notebook-usage)
 - [Terraform on Virtual Machine](#terraform-on-virtual-machine)
-  - [Install Terraform](#install-terraform)
-  - [Transfer the GCP Service Account Key](#transfer-the-gcp-service-account-key)
-    - [For Windows Transfer via WinSCP](#for-windows-transfer-via-winscp)
-    - [For SFTP transfer via CLI](#for-sftp-transfer-via-cli)
-  - [Perform Terraform](#perform-terraform)
-    - [Login the gcloud service account in CLI](#login-the-gcloud-service-account-in-cli)
-    - [Terraform commands](#terraform-commands)
+    - [Install Terraform](#install-terraform)
+    - [Transfer the GCP Service Account Key](#transfer-the-gcp-service-account-key)
+        - [For Windows Transfer via WinSCP](#for-windows-transfer-via-winscp)
+        - [For SFTP transfer via CLI](#for-sftp-transfer-via-cli)
+    - [Perform Terraform](#perform-terraform)
+        - [Login the gcloud service account in CLI](#login-the-gcloud-service-account-in-cli)
+        - [Terraform commands](#terraform-commands)
 - [Virtual Machine Actions](#virtual-machine-actions)
-  - [Turn off virtual machine](#turn-off-virtual-machine)
-  - [Turn on virtual machine](#turn-on-virtual-machine)
+    - [Turn off virtual machine](#turn-off-virtual-machine)
+    - [Turn on virtual machine](#turn-on-virtual-machine)
+    - [Delete Virtual Machine](#delete-virtual-machine)
 - [Page](#page)
 
 ---
@@ -45,7 +49,7 @@ As you can see here, there is currently no Virtual Machine created.
 
 ![](https://i.imgur.com/MNKuV1p.png)
 
-So with this lesson, we are going to created Virtual Machine Instance but we must generate ssh key first.
+So with this lesson, we are going to create Virtual Machine Instance, but we must generate ssh key first.
 
 ---
 
@@ -58,7 +62,7 @@ GCP https://cloud.google.com/compute/docs/connect/create-ssh-keys
 
 ### Instructions
 
-1. We must first create a ssh directory, and then go into it.
+1. We must first create an ssh directory, and then go into it.
 
    ```shell
    mkdir ~/.ssh/
@@ -88,7 +92,7 @@ GCP https://cloud.google.com/compute/docs/connect/create-ssh-keys
 
 3. Now we are going to put the `public key` to our Google Cloud.
 
-   In the `Compute Engine` scroll down in the left side until you found the `Metadata`
+   In the `Compute Engine` scroll down on the left side until you found the `Metadata`
 
    ![](https://i.imgur.com/9gMQruv.png)
 
@@ -120,7 +124,7 @@ GCP https://cloud.google.com/compute/docs/connect/create-ssh-keys
 
    ![](https://i.imgur.com/D8PAAiq.png)
 
-   You can also see how much it would cost `monthly estimate` at the right side as well as the `cost per hour`.
+   You can also see how much it would cost `monthly estimate` on the right side as well as the `cost per hour`.
 
    ![](https://i.imgur.com/Z5gjcmy.png)
 
@@ -178,7 +182,7 @@ GCP https://cloud.google.com/compute/docs/connect/create-ssh-keys
 
    ![](https://i.imgur.com/3U9Pb7I.png)
 
-3. Wait to established connection and then you'll be able to be connected.
+3. Wait to established connection, and then you'll be able to be connected.
 
    ![](https://i.imgur.com/NR2Jlcb.png)
 
@@ -299,7 +303,7 @@ In order to resolve this issue, users must ensure that they have the following i
 
    ![](https://i.imgur.com/viS2IZl.png)
 
-4. Now restart to connect to the Virtual Machine Instance, and you'll be able to login with the Anaconda env.
+4. Now restart to connect to the Virtual Machine Instance, and you'll be able to log in with the Anaconda env.
 
    ![](https://i.imgur.com/uqnEYrO.png)
 
@@ -382,25 +386,25 @@ In order to resolve this issue, users must ensure that they have the following i
        ```
 
 9. Install the postgres cli and check if it is running.
-   1. Install
-   
-      ```shell
-      pip install pgcli
-      ```
-   
-   2. Check
+    1. Install
 
-      ```shell
-      pgcli -h localhost -U root -d ny_taxi
-      ```
-   
-   3. Check if the table is created.
+       ```shell
+       pip install pgcli
+       ```
 
-      ```shell
-      \dt
-      ```
+    2. Check
 
-      ![](https://i.imgur.com/Sw0vOMh.png)
+       ```shell
+       pgcli -h localhost -U root -d ny_taxi
+       ```
+
+    3. Check if the table is created.
+
+       ```shell
+       \dt
+       ```
+
+       ![](https://i.imgur.com/Sw0vOMh.png)
 
 ---
 
@@ -411,23 +415,23 @@ In order to resolve this issue, users must ensure that they have the following i
 We're going to port forward the remote VM to our local machine in order to interact with our local machine.
 
 1. Open the Remote SSH to our GCP Virtual Machine
-   
+
 2. Open New Terminal or use
-   
+
    ```
    Ctrl+Shift+`
    ```
-   
+
    ![](https://i.imgur.com/tGGel2g.png)
 
 3. On the new terminal, Go to the `Ports` tab and then click `forward port`.
-   
+
    ![](https://i.imgur.com/ZncKMxw.png)
 
 4. Now add the following ports
-   1. `5432` for postgres database
-   2. `8080` for pgadmin
-   
+    1. `5432` for postgres database
+    2. `8080` for pgadmin
+
    ![](https://i.imgur.com/OK8IFvX.png)
 
 ### Testing on Local Machine
@@ -452,6 +456,44 @@ You can now see that the Database is loaded successfully.
 
 ---
 
+### Port Forwarding Jupyter Notebook
+
+#### Open the Jupyter Notebook Port
+
+1. Open New Terminal or use
+
+   ```
+   Ctrl+Shift+`
+   ```
+
+   ![](https://i.imgur.com/tGGel2g.png)
+
+2. On the new terminal, Go to the `Ports` tab and then click `forward port`.
+
+   ![](https://i.imgur.com/ZncKMxw.png)
+
+3. Now add the following ports
+
+   `8888` for Jupyter Notebook
+
+   ![](https://i.imgur.com/5CVaIQO.png)
+
+#### Jupyter Notebook Usage
+
+1. On the terminal enter the command to open a jupyter notebook
+
+   ```shell
+   jupyter notebook
+   ```
+
+   ![](https://i.imgur.com/016p36W.png)
+
+2. Copy the link and Enter it on the browser. Now you can use Jupyter Notebook hosted on VM.
+
+   ![](https://i.imgur.com/A6oFo1W.png)
+
+---
+
 ## Terraform on Virtual Machine
 
 ### Install Terraform
@@ -467,24 +509,24 @@ The WSL setup should be the same as the Linux.
 #### For Windows Transfer via WinSCP
 
 1. Download the Winscp.
-   
+
    https://winscp.net/eng/download.php
 
-2. Enter the following details: 
-   1. `Host Name` for the VM Ip address
-   2. `User name` for the User of the VM
-   3. `Password` for the password of the VM. But this is optional since we didn't add password.
+2. Enter the following details:
+    1. `Host Name` for the VM Ip address
+    2. `User name` for the User of the VM
+    3. `Password` for the password of the VM. But this is optional since we didn't add password.
 
    Afterwards, Click the advanced
 
    ![](https://i.imgur.com/xdNAqnY.png)
 
 3. Select the private key and let the WinSCP convert it to PuTTY private key format and then hit save.
-   
+
    ![](https://i.imgur.com/xm4kzbr.png)
 
 4. Click `ok` and then click `Login`
-   
+
    ![](https://i.imgur.com/9gUQQAH.png)
 
    ![](https://i.imgur.com/DycoJy2.png)
@@ -495,7 +537,8 @@ The WSL setup should be the same as the Linux.
 
 Since we already have ssh config we can just call
 
-Make sure where we call the `sftp` command is the same directory where `<SERVICE-ACCOUNT>.json` is located for easier uploading of file.
+Make sure where we call the `sftp` command is the same directory where `<SERVICE-ACCOUNT>.json` is located for easier
+uploading of file.
 
 ```
 sftp de-zoomcamp
@@ -512,7 +555,6 @@ put <SERVICE-ACCOUNT>.json
 ![](https://i.imgur.com/RW7QbVI.png)
 
 After uploading use `exit` to exit the `sftp`
-
 
 ### Perform Terraform
 
@@ -542,7 +584,8 @@ Since the VM is Linux you can run the command to turn off the Virtual Machine.
 sudo shutdown -h now
 ```
 
-Alternatively, you can go to the browser and Click the Kehab menu and click `Stop` in order to turn off the Virtual Machine.
+Alternatively, you can go to the browser and Click the Kehab menu and click `Stop` in order to turn off the Virtual
+Machine.
 
 ![](https://i.imgur.com/IotL8VU.png)
 
@@ -554,7 +597,11 @@ To turn it on from the off state. Click the Kehab Menu and the click `Start/Resu
 
 ![](https://i.imgur.com/RI6DSyL.png)
 
+### Delete Virtual Machine
 
+This action will delete all files on the Virtual Machine.
+
+![](https://i.imgur.com/cAHJlQo.png)
 
 ---
 
