@@ -392,7 +392,7 @@ In order to resolve this issue, users must ensure that they have the following i
        pip install pgcli
        ```
 
-    2. Check
+    2. Connect to the database
 
        ```shell
        pgcli -h localhost -U root -d ny_taxi
