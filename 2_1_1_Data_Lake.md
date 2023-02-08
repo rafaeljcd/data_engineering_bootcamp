@@ -3,6 +3,8 @@
   - [Data Lake vs Data Warehouse](#data-lake-vs-data-warehouse)
   - [How did Data Lake started](#how-did-data-lake-started)
   - [ETL vs ELT](#etl-vs-elt)
+  - [Challenges on Data Lake](#challenges-on-data-lake)
+  - [Cloud Provider for data lake](#cloud-provider-for-data-lake)
   - [Resources](#resources)
   - [Page](#page)
 
@@ -49,7 +51,7 @@ The use cases which are covered by data lake are basically:
 The data is generally structured, the users are business analysts the data size is generally small and the use case
 consists of batch processing or bi reporting.
 
-Typically contain quantitative metrics, the attributes describing them, and data derived from transactional systems. Web
+Typically, contain quantitative metrics, the attributes describing them, and data derived from transactional systems. Web
 server logs, social network activity, sensor data, images, and text are all examples of non-traditional data sources
 which are ignored.
 
@@ -58,7 +60,7 @@ which are ignored.
 ## How did Data Lake started
 
 Companies realize the value of data which then started developing projects and products which are totally revolving
-around data and they have made huge amount of revenues based upon that.
+around data, and they have made huge amount of revenues based upon that.
 
 The idea also consists that they want to store and access the data quickly. They don't want to wait to developer teams
 to develop a structure of data, to develop relationships and then the data being useful.
@@ -71,7 +73,7 @@ cycle.
 
 With this, they have also seen an increase in data scientists and R&D on products.
 
-This all came down to storing this data as cheaply as possible and these are the one of one of the few reasons why data
+This all came down to storing this data as cheaply as possible and these are the one of the few reasons why data
 lake came into the picture
 
 ---
@@ -92,6 +94,28 @@ The idea of an ETL is schema on write that defines a well-defined schema, define
 ELT is based upon schema on read where you write the data first and determine the schema on the read
 
 ---
+
+## Challenges on Data Lake
+
+It's well known that data lake starts with a good intention but soon converts into a data swamp which makes it very hard to be useful by data scientists or analysts
+
+A **data swamp** is the degenerative state of a data lake. Tables within the lake either return inaccurate data or files become corrupted and queries stop running altogether.
+
+Some of the reasons that a data lake converts into data swamp is that there is generally no versioning.
+
+There is incompatible schemas for the same data without versioning like for example: today you are writing trip data using [AVRO](https://avro.apache.org/) and tomorrow in the same path in the same folder you are writing data as [parquet](https://parquet.apache.org/). This will be this will make it very hard for the consumers to consume this data and that's why the whole data set becomes useless.
+
+Generally if you do not associate any metadata to your data it becomes really hard for a person or a data scientist to use your data to figure out what's the usefulness for the data for the project.
+
+Generally data lake also becomes useless when there is not a possibility to join different data sets it is because there is no foreign key available or there is no other possibility to join different data sets
+
+---
+
+## Cloud Provider for data lake
+
+- GCP - Cloud Storage
+- AWS - S3
+- Azure - Azure Blob
 
 ---
 
