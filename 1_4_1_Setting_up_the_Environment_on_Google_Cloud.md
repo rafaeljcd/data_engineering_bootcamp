@@ -242,7 +242,7 @@ In order to resolve this issue, users must ensure that they have the following i
 
    `C:\Program Files\Git\usr\bin`
 
-   On the next time it is reboot, you will do the opposite and remote that `C:\Program Files\Git\usr\bin` at the very
+   On the next time it is reboot, you will do the opposite and remove that `C:\Program Files\Git\usr\bin` at the very
    end.
 
 3. Open `cmd.exe` and confirm with
