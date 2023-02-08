@@ -16,6 +16,7 @@
     - [With max](#with-max)
     - [Group by their position](#group-by-their-position)
     - [Chain order by](#chain-order-by)
+- [Resources](#resources)
 - [Pages](#pages)
 
 
@@ -443,6 +444,13 @@ order by
 ```
 
 ![](https://i.imgur.com/I2sSJzJ.png)
+
+---
+
+## Resources
+
+- [Youtube - 1 .2.6 - SQL Refresher](https://www.youtube.com/watch?v=QEcps_iskgg)
+- [Images for this session](./files/week1/1.2.6_files)
 
 ---
 

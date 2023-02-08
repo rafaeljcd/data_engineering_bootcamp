@@ -1,34 +1,35 @@
 - [Introduction](#introduction)
 - [SSH key](#ssh-key)
-    - [Documentation](#documentation)
-    - [Instructions](#instructions)
+  - [Documentation](#documentation)
+  - [Instructions](#instructions)
 - [Create Virtual Machine Instance](#create-virtual-machine-instance)
 - [Connect to Virtual Machine Instance via SSH](#connect-to-virtual-machine-instance-via-ssh)
 - [Set up SSH Config for VM Instance access](#set-up-ssh-config-for-vm-instance-access)
 - [Configure VSCode to connect to the Virtual Machine Instance](#configure-vscode-to-connect-to-the-virtual-machine-instance)
-    - [Remote SSH code 255 in windows](#remote-ssh-code-255-in-windows)
-        - [Error](#error)
-        - [Pre-requisite](#pre-requisite)
-        - [Solution](#solution)
+  - [Remote SSH code 255 in windows](#remote-ssh-code-255-in-windows)
+    - [Error](#error)
+    - [Pre-requisite](#pre-requisite)
+    - [Solution](#solution)
 - [Set up the Virtual Machine Instance](#set-up-the-virtual-machine-instance)
 - [Port Forwarding to local machine](#port-forwarding-to-local-machine)
-    - [Port Forwarding Instructions](#port-forwarding-instructions)
-    - [Testing on Local Machine](#testing-on-local-machine)
-    - [Port Forwarding Jupyter Notebook](#port-forwarding-jupyter-notebook)
-        - [Open the Jupyter Notebook Port](#open-the-jupyter-notebook-port)
-        - [Jupyter Notebook Usage](#jupyter-notebook-usage)
+  - [Port Forwarding Instructions](#port-forwarding-instructions)
+  - [Testing on Local Machine](#testing-on-local-machine)
+  - [Port Forwarding Jupyter Notebook](#port-forwarding-jupyter-notebook)
+    - [Open the Jupyter Notebook Port](#open-the-jupyter-notebook-port)
+    - [Jupyter Notebook Usage](#jupyter-notebook-usage)
 - [Terraform on Virtual Machine](#terraform-on-virtual-machine)
-    - [Install Terraform](#install-terraform)
-    - [Transfer the GCP Service Account Key](#transfer-the-gcp-service-account-key)
-        - [For Windows Transfer via WinSCP](#for-windows-transfer-via-winscp)
-        - [For SFTP transfer via CLI](#for-sftp-transfer-via-cli)
-    - [Perform Terraform](#perform-terraform)
-        - [Login the gcloud service account in CLI](#login-the-gcloud-service-account-in-cli)
-        - [Terraform commands](#terraform-commands)
+  - [Install Terraform](#install-terraform)
+  - [Transfer the GCP Service Account Key](#transfer-the-gcp-service-account-key)
+    - [For Windows Transfer via WinSCP](#for-windows-transfer-via-winscp)
+    - [For SFTP transfer via CLI](#for-sftp-transfer-via-cli)
+  - [Perform Terraform](#perform-terraform)
+    - [Login the gcloud service account in CLI](#login-the-gcloud-service-account-in-cli)
+    - [Terraform commands](#terraform-commands)
 - [Virtual Machine Actions](#virtual-machine-actions)
-    - [Turn off virtual machine](#turn-off-virtual-machine)
-    - [Turn on virtual machine](#turn-on-virtual-machine)
-    - [Delete Virtual Machine](#delete-virtual-machine)
+  - [Turn off virtual machine](#turn-off-virtual-machine)
+  - [Turn on virtual machine](#turn-on-virtual-machine)
+  - [Delete Virtual Machine](#delete-virtual-machine)
+- [Resources](#resources)
 - [Page](#page)
 
 ---
@@ -602,6 +603,13 @@ To turn it on from the off state. Click the Kehab Menu and the click `Start/Resu
 This action will delete all files on the Virtual Machine.
 
 ![](https://i.imgur.com/cAHJlQo.png)
+
+---
+
+## Resources
+
+- [Youtube - 1.4.1 - Setting up the Environment on Google Cloud](https://www.youtube.com/watch?v=ae-CV2KfoN0)
+- [Images for this session](files/week1/1_4_1_files)
 
 ---
 

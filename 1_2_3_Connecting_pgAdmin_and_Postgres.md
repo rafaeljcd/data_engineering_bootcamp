@@ -7,6 +7,7 @@
   - [Connecting to the network](#connecting-to-the-network)
     - [Docker run error](#docker-run-error)
   - [Connecting to the network from two separate containers](#connecting-to-the-network-from-two-separate-containers)
+- [Resources](#resources)
 - [Pages](#pages)
 
 ---
@@ -182,6 +183,13 @@ But instead of using `localhost`, we must use the name of the container `postgre
 ![](https://i.imgur.com/mUKtrio.png)
 
 And now it is a success connecting the two containers via `docker network`
+
+---
+
+## Resources
+
+- [Youtube - 1.2.3 - Connecting pgAdmin and Postgres](https://www.youtube.com/watch?v=hCAIVe9N0ow)
+- [Images for this session](files/week1/1.2.3_Connecting_pgAdmin_and_Postgres_files)
 
 ---
 

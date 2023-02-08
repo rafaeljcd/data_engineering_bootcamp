@@ -1,3 +1,15 @@
+- [Resources](#resources)
+- [Page](#page)
+
+---
+
+## Resources
+
+- [Youtube - 2.1.1 - Data Lake](https://www.youtube.com/watch?v=W3Zm6rjOq70)
+
+
+---
+
 ## Page
 
 | Previous                                                                                          | table of contents      |

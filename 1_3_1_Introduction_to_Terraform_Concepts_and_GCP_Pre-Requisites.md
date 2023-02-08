@@ -11,8 +11,8 @@
     - [Setup access](#setup-access)
       - [Setup permission roles for the GCP user account](#setup-permission-roles-for-the-gcp-user-account)
       - [Enable APIs for the project](#enable-apis-for-the-project)
+  - [Resources](#resources)
   - [Pages](#pages)
-
 
 ---
 
@@ -271,6 +271,13 @@ sometimes we must have multiple projects.
   ![](files/week1/1.3.1_files/api_setup/iam_service_account.png)
 
 And now with all the steps done, we can now begin with the terraform part.
+
+---
+
+## Resources
+
+- [Youtube - 1.3.1 - Introduction to Terraform Concepts & GCP Pre-Requisites](https://www.youtube.com/watch?v=Hajwnmj0xfQ)
+- [Images for this session](/files/week1/1.3.1_files)
 
 ---
 

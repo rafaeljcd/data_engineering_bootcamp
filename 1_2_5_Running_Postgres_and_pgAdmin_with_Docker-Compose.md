@@ -8,6 +8,7 @@ It is a utility to allow to put multiple configurations of a docker in a single 
     - [Solution](#solution)
     - [Correct configuration](#correct-configuration)
   - [How it looks like](#how-it-looks-like)
+  - [Resources](#resources)
   - [Pages](#pages)
 
 
@@ -163,6 +164,12 @@ This is what it looks like when stopping the docker compose
 `docker compose down`
 
 ![](https://i.imgur.com/bploamG.png)
+
+---
+
+## Resources
+
+- [Youtube - 1.2.5 - Running Postgres and pgAdmin with Docker-Compose](https://www.youtube.com/watch?v=hKI6PkPhpa0)
 
 ---
 

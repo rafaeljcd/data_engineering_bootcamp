@@ -15,6 +15,7 @@
   - [Terraform Apply](#terraform-apply)
     - [Check the project in GCP for the changes](#check-the-project-in-gcp-for-the-changes)
   - [Terraform Destroy](#terraform-destroy)
+- [Resources](#resources)
 - [Page](#page)
 
 ---
@@ -354,6 +355,13 @@ After invoking the `terraform destroy` it will then show you like the `terraform
 ![](https://i.imgur.com/75pJrt1.png)
 
 And upon checking in the GCP, the resources created are indeed gone.
+
+---
+
+## Resources
+
+- [Youtube - 1.3.2 - Creating GCP Infrastructure with Terraform](https://www.youtube.com/watch?v=dNkEgO-CExg)
+- [Images for this session](files/week1/1_3_2_files)
 
 ---
 

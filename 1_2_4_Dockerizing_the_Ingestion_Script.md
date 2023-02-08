@@ -3,8 +3,8 @@
   - [Code](#code)
   - [Terminal](#terminal)
 - [Add the python script to the docker](#add-the-python-script-to-the-docker)
+- [Resources](#resources)
 - [Pages](#pages)
-
 
 ---
 
@@ -16,7 +16,8 @@ In order to ensure that we have successfully copied the csv to the database. We 
 the database
 
 ```postgresql
-delete from yellow_taxi_data
+delete
+from yellow_taxi_data
 ```
 
 ---
@@ -30,6 +31,7 @@ The script is also design that if there are no args inserted then it will not co
 [Python script](src/week1/ingest_data.py)
 
 ### Code
+
 ```python
 
 import argparse
@@ -244,6 +246,12 @@ docker run -d \
       --table_name=yellow_taxi_data \
       --url=${URL}
 ```
+
+---
+
+## Resources
+
+- [Youtube - 1.2.4 - Dockerizing the Ingestion Script](https://www.youtube.com/watch?v=B1WwATwf-vY)
 
 ---
 
