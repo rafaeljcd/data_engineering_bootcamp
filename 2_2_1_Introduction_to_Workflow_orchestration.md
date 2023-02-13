@@ -50,15 +50,25 @@ You could also choose the delivery type you know do you want express delivery im
 your packages or do you want some speed up execution with a single thread using concurrency and async that would be like
 having one driver who's faster and more efficient
 
-Workflow orchestration is taking care of the delivery so that really means the execution of the workflow run and this is ensuring that your products are getting packaged as desired, shipped at the schedule that you specified, and with the right delivery type.
+Workflow orchestration is taking care of the delivery so that really means the execution of the workflow run and this is
+ensuring that your products are getting packaged as desired, shipped at the schedule that you specified, and with the
+right delivery type.
 
-With Delivery Systems, a good orchestration service should scale and be highly available. We need to ensure that your order is getting shipped, even if for example supplier is sick or there's a weather storm delay that should not be affecting your package delivery system, as should a good orchestration system should be scalable and highly available as well.
+With Delivery Systems, a good orchestration service should scale and be highly available. We need to ensure that your
+order is getting shipped, even if for example supplier is sick or there's a weather storm delay that should not be
+affecting your package delivery system, as should a good orchestration system should be scalable and highly available as
+well.
 
-It is a fact that issues can arise during a delivery, such as damaged boxes that need to be returned. In workflows, this can translate to retrying, restarting, or the need to reschedule the entire delivery process.
+It is a fact that issues can arise during a delivery, such as damaged boxes that need to be returned. In workflows, this
+can translate to retrying, restarting, or the need to reschedule the entire delivery process.
 
-Workflow orchestration focuses on managing the flow of data and ensuring reliable execution. It provides visibility into the delivery duration, shipment updates, similar to workflow execution logs, and confirms the successful completion of the shipment, which is the final state of the workflow.
+Workflow orchestration focuses on managing the flow of data and ensuring reliable execution. It provides visibility into
+the delivery duration, shipment updates, similar to workflow execution logs, and confirms the successful completion of
+the shipment, which is the final state of the workflow.
 
-A delivery service should prioritize your privacy and only access metadata, such as the shipment address, delivery type, and packaging form. Its role is limited to transporting and executing the data flow, without infringing on the contents of the box, or your data. Privacy should be respected.
+A delivery service should prioritize your privacy and only access metadata, such as the shipment address, delivery type,
+and packaging form. Its role is limited to transporting and executing the data flow, without infringing on the contents
+of the box, or your data. Privacy should be respected.
 
 ---
 
@@ -78,6 +88,18 @@ A delivery service should prioritize your privacy and only access metadata, such
 ## Different type of workflow tools
 
 ![](https://i.imgur.com/vhiuX75.jpeg)
+
+There are numerous tools available for data engineering and orchestration, as demonstrated in the 2022 State of Data
+Engineering Map by LakeFS. While many tools have orchestration capabilities, such as Snowflake's data pipelines, a
+comprehensive workflow orchestration tool offers the ability to manage data flow across all tools available in the
+market.
+
+In the following lectures we're going to be using open source prefect as the workflow orchestration tool
+
+Prefect is a modern workflow orchestration tool that's going to deliver all those capabilities that makes a great
+workflow orchestration tool and continues to drive Innovation
+
+With that said it's always recommended to find the tool that works best for you and your specific use case
 
 ## Resources
 
