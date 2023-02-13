@@ -124,11 +124,12 @@ Generally data lake also becomes useless when there is not a possibility to join
 - [Youtube - 2.1.1 - Data Lake](https://www.youtube.com/watch?v=W3Zm6rjOq70)
 - [Blog - Data Lake](https://lakefs.io/blog/data-lakes/)
 - [Blog - Data Lake vs Data Warehouse](https://vmblog.com/archive/2022/05/30/7-key-differences-between-data-lake-and-data-warehouse-do-you-need-both.aspx)
+- [Images for this sessions](files/week2/2_1_1_files)
 
 ---
 
 ## Page
 
-| Previous                                                                                          | table of contents      |
-|---------------------------------------------------------------------------------------------------|------------------------|
-| [Setting up the Environment on Google Cloud](1_4_1_Setting_up_the_Environment_on_Google_Cloud.md) | [Readme.md](README.md) |
+| Previous                                                                                          | table of contents      | Next                                                                                      |
+|---------------------------------------------------------------------------------------------------|------------------------|-------------------------------------------------------------------------------------------|
+| [Setting up the Environment on Google Cloud](1_4_1_Setting_up_the_Environment_on_Google_Cloud.md) | [Readme.md](README.md) | [Introduction to Workflow orchestration](2_2_1_Introduction_to_Workflow_orchestration.md) |
