@@ -1,4 +1,3 @@
-import argparse
 import requests
 import pandas as pd
 import gzip
@@ -7,6 +6,7 @@ from os.path import splitext
 from urllib.parse import urlparse
 from sqlalchemy import create_engine
 from pathlib import Path
+from prefect import flow, task
 
 
 def download_csv(
@@ -48,24 +48,14 @@ def download_csv(
     return csv_file_path
 
 
-def main(
-        params: argparse.Namespace
+def ingest_data(
+        user: str,
+        host: str,
+        port: str,
+        db: str,
+        table_name: str,
+        csv_file_path: Path
 ):
-    user = params.user if hasattr(params, "user") else None
-    password = params.password if hasattr(params, "password") else None
-    host = params.host if hasattr(params, "host") else None
-    port = params.port if hasattr(params, "port") else None
-    db = params.db if hasattr(params, "db") else None
-    table_name = params.table_name if hasattr(params, "table_name") else None
-    url = params.url if hasattr(params, "url") else None
-
-    if any(item is None for item in [user, password, host, port, db, table_name, url]):
-        print("Empty arguments")
-        return
-
-    # Download CSV
-    csv_file_path = download_csv(url=url)
-
     print("creating engine")
     # Initialized the engine
     engine = create_engine(
@@ -91,17 +81,28 @@ def main(
     print("done")
 
 
+@flow(name="Ingest Flow", retries=3, log_prints=True)
+def main():
+    user = "root"
+    password = "root"
+    host = "localhost"
+    port = "5432"
+    db = "ny_taxi"
+    table_name = "yellow_taxi_data"
+    url = "https://github.com/DataTalksClub/nyc-tlc-data/releases/download/yellow/yellow_tripdata_2021-01.csv.gz "
+
+    # Download CSV
+    csv_file_path = download_csv(url=url)
+
+    ingest_data(
+        user=user,
+        host=host,
+        port=port,
+        db=db,
+        table_name=table_name,
+        csv_file_path=csv_file_path
+    )
+
+
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description="Ingest CSV to postgres")
-
-    parser.add_argument("--user", help="username for postgres")
-    parser.add_argument("--password", help="password for postgres")
-    parser.add_argument("--host", help="host for postgres")
-    parser.add_argument("--port", help="port for postgres", type=int)
-    parser.add_argument("--db", help="database name for postgres")
-    parser.add_argument("--table_name", help="name of the table where we will write the results")
-    parser.add_argument("--url", help="url of the csv file")
-
-    args = parser.parse_args()
-
-    main(args)
+    main()

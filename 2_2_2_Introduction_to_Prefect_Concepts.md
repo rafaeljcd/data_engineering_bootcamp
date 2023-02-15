@@ -1,6 +1,8 @@
 - [Introduction to Prefect Concepts](#introduction-to-prefect-concepts)
   - [Pre-requirements](#pre-requirements)
   - [Ingest Data Python Script](#ingest-data-python-script)
+  - [Scenario explanation](#scenario-explanation)
+  - [Transform the python script into a Prefect flow](#transform-the-python-script-into-a-prefect-flow)
   - [Resources](#resources)
   - [Page](#page)
 
@@ -211,6 +213,56 @@ if __name__ == '__main__':
 ```
 
 ---
+
+## Scenario explanation
+
+The above is the program we have written before for the writing of the csv to the postgres database.
+
+Now we are going to transform this file into be orchestrated with prefect.
+
+Prefect is the modern open source data flow automation platform that allows to add observability and orchestration by
+using python to write codes as workflows and let us run, build and monitor this pipeline at scale.
+
+---
+
+## Transform the python script into a Prefect flow
+
+First we need to import flow from the prefect module.
+
+```python
+from prefect import flow
+```
+
+**Flows** are the most basic Prefect object. Flows are the only Prefect abstraction that can be interacted with, displayed, and run without needing to reference any other aspect of the Prefect engine. 
+
+A **flow** is a container for workflow logic and allows users to interact with and reason about the state of their workflows. It is represented in Python as a single function.
+
+A **Flow** is the most basic Prefect object that's a container of workflow logic that allows to interact and understand the state of the workflow 
+
+```python
+@flow(name="Ingest Flow", retries=3)
+def main():
+    user = "root"
+    password = "root"
+    host = "localhost"
+    port = "5432"
+    db = "ny_taxi"
+    table_name = "yellow_taxi_data"
+    url = "https://github.com/DataTalksClub/nyc-tlc-data/releases/download/yellow/yellow_tripdata_2021-01.csv.gz"
+
+    csv_file_path = download_csv(url=url)
+
+    ingest_data(
+        user=user,
+        host=host,
+        port=port,
+        db=db,
+        table_name=table_name,
+        csv_file_path=csv_file_path
+    )
+```
+
+Now we need to add the python decorator `flow` to the `main` function in order to create our main flow.
 
 ## Resources
 
