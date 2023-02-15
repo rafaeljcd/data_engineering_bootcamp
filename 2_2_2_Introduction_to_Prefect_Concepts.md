@@ -1,10 +1,8 @@
 - [Introduction to Prefect Concepts](#introduction-to-prefect-concepts)
-    - [Pre-requirements](#pre-requirements)
-    - [Ingest Data Python Script](#ingest-data-python-script)
-    - [Scenario explanation](#scenario-explanation)
-    - [Transform the python script into a Prefect flow](#transform-the-python-script-into-a-prefect-flow)
-    - [Resources](#resources)
-    - [Page](#page)
+  - [Pre-requirements](#pre-requirements)
+  - [Ingest Data Python Script](#ingest-data-python-script)
+  - [Resources](#resources)
+  - [Page](#page)
 
 # Introduction to Prefect Concepts
 
