@@ -264,6 +264,58 @@ def main():
 
 Now we need to add the python decorator `flow` to the `main` function in order to create our main flow.
 
+Flows can contain `task`, now we are going to transform data into a `task` by adding the task decorator
+
+```python
+@task(log_prints=True, retries=3)
+def ingest_data(
+        user: str,
+        host: str,
+        port: str,
+        db: str,
+        table_name: str,
+        csv_file_path: Path
+):
+    print("creating engine")
+    # Initialized the engine
+    engine = create_engine(
+        f"postgresql://{user}:{user}@{host}:{port}/{db}"
+    )
+
+    print("reading csv")
+    df_iter = pd.read_csv(csv_file_path, iterator=True, chunksize=100_000, low_memory=False)
+
+    print("now saving to database")
+    while True:
+        try:
+            df = next(df_iter)
+            if hasattr(df, "tpep_dropoff_datetime"):
+                df.tpep_dropoff_datetime = pd.to_datetime(df.tpep_dropoff_datetime)
+            if hasattr(df, "tpep_pickup_datetime"):
+                df.tpep_pickup_datetime = pd.to_datetime(df.tpep_pickup_datetime)
+            df.to_sql(name=table_name, con=engine, if_exists='append')
+        except StopIteration:
+            break
+
+    print("done")
+```
+
+`Task` are not required for flows but task are special because they can receive metadata about upstream dependencies and the state of those dependencies before the function is run which gives you the opportunity to have a task wait on the completion of another task before executing
+
+We can add the `log_prints` in order to print out the task, and we can also add the `retries` for automatic retries because we are calling data from an external source so if it failed we can have it automatically retry
+
+In order to make sure it indeed managed to insert the data run the command in postgres to delete the table
+
+```postgresql
+delete from yellow_taxi_data;
+```
+
+```shell
+python3 src/week2/ingest_data.py
+```
+
+![](https://i.imgur.com/4jyFfdn.png)
+
 ## Resources
 
 - [Youtube - 2.2.2 - Introduction to Prefect Concepts](https://www.youtube.com/watch?v=cdtN6dhp708)

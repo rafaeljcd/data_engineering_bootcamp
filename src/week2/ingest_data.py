@@ -47,7 +47,7 @@ def download_csv(
 
     return csv_file_path
 
-
+@task(log_prints=True, retries=3)
 def ingest_data(
         user: str,
         host: str,
@@ -74,14 +74,13 @@ def ingest_data(
             if hasattr(df, "tpep_pickup_datetime"):
                 df.tpep_pickup_datetime = pd.to_datetime(df.tpep_pickup_datetime)
             df.to_sql(name=table_name, con=engine, if_exists='append')
-            print("Inserted new chunk")
         except StopIteration:
             break
 
     print("done")
 
 
-@flow(name="Ingest Flow", retries=3, log_prints=True)
+@flow(name="Ingest Flow")
 def main():
     user = "root"
     password = "root"
