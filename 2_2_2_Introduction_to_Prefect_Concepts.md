@@ -3,6 +3,10 @@
   - [Ingest Data Python Script](#ingest-data-python-script)
   - [Scenario explanation](#scenario-explanation)
   - [Transform the python script into a Prefect flow](#transform-the-python-script-into-a-prefect-flow)
+    - [Initial Test of the Prefect](#initial-test-of-the-prefect)
+    - [Error when running initial prefect python script](#error-when-running-initial-prefect-python-script)
+    - [Solution to the error when running the initial prefect python script](#solution-to-the-error-when-running-the-initial-prefect-python-script)
+    - [Post-solution thoughts about the problem](#post-solution-thoughts-about-the-problem)
   - [Resources](#resources)
   - [Page](#page)
 
@@ -306,15 +310,58 @@ We can add the `log_prints` in order to print out the task, and we can also add 
 
 In order to make sure it indeed managed to insert the data run the command in postgres to delete the table
 
+### Initial Test of the Prefect
+
 ```postgresql
 delete from yellow_taxi_data;
 ```
+
+In order to check if we really managed to enter the data, we need to delete the table to start from the start
+
+---
 
 ```shell
 python3 src/week2/ingest_data.py
 ```
 
+### Error when running initial prefect python script
+
 ![](https://i.imgur.com/4jyFfdn.png)
+
+[Same error from prefect discourse](https://discourse.prefect.io/t/installation-error-prefect-version-cmd-errors/1784/2)
+
+```shell
+prefect orion start
+```
+
+![](https://i.imgur.com/6zbqfi8.png)
+
+```shell
+Application startup failed. Exiting.
+Orion stopped!
+```
+
+Error appears when starting the prefect
+
+### Solution to the error when running the initial prefect python script
+
+```shell
+rm ~/.prefect/orion.db
+prefect orion start
+```
+
+![](https://i.imgur.com/4olA5tw.png)
+
+### Post-solution thoughts about the problem
+
+Most likely the error appeared due to the first run of the python script with prefect, and then afterwards deleted the table and re-run the program for the documentation.
+
+---
+
+By visiting the `http://127.0.0.1:4200`, we will be able to view the prefect runs locally.
+
+![](https://i.imgur.com/rzVNOGM.png)
+
 
 ## Resources
 
