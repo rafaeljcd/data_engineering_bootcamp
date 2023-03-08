@@ -1,14 +1,14 @@
 - [Introduction to Prefect Concepts](#introduction-to-prefect-concepts)
-  - [Pre-requirements](#pre-requirements)
-  - [Ingest Data Python Script](#ingest-data-python-script)
-  - [Scenario explanation](#scenario-explanation)
-  - [Transform the python script into a Prefect flow](#transform-the-python-script-into-a-prefect-flow)
-    - [Initial Test of the Prefect](#initial-test-of-the-prefect)
-    - [Error when running initial prefect python script](#error-when-running-initial-prefect-python-script)
-    - [Solution to the error when running the initial prefect python script](#solution-to-the-error-when-running-the-initial-prefect-python-script)
-    - [Post-solution thoughts about the problem](#post-solution-thoughts-about-the-problem)
-  - [Resources](#resources)
-  - [Page](#page)
+    - [Pre-requirements](#pre-requirements)
+    - [Ingest Data Python Script](#ingest-data-python-script)
+    - [Scenario explanation](#scenario-explanation)
+    - [Transform the python script into a Prefect flow](#transform-the-python-script-into-a-prefect-flow)
+        - [Initial Test of the Prefect](#initial-test-of-the-prefect)
+        - [Error when running initial prefect python script](#error-when-running-initial-prefect-python-script)
+        - [Solution to the error when running the initial prefect python script](#solution-to-the-error-when-running-the-initial-prefect-python-script)
+        - [Post-solution thoughts about the problem](#post-solution-thoughts-about-the-problem)
+    - [Resources](#resources)
+    - [Page](#page)
 
 # Introduction to Prefect Concepts
 
@@ -237,11 +237,14 @@ First we need to import flow from the prefect module.
 from prefect import flow
 ```
 
-**Flows** are the most basic Prefect object. Flows are the only Prefect abstraction that can be interacted with, displayed, and run without needing to reference any other aspect of the Prefect engine. 
+**Flows** are the most basic Prefect object. Flows are the only Prefect abstraction that can be interacted with,
+displayed, and run without needing to reference any other aspect of the Prefect engine.
 
-A **flow** is a container for workflow logic and allows users to interact with and reason about the state of their workflows. It is represented in Python as a single function.
+A **flow** is a container for workflow logic and allows users to interact with and reason about the state of their
+workflows. It is represented in Python as a single function.
 
-A **Flow** is the most basic Prefect object that's a container of workflow logic that allows to interact and understand the state of the workflow 
+A **Flow** is the most basic Prefect object that's a container of workflow logic that allows to interact and understand
+the state of the workflow
 
 ```python
 @flow(name="Ingest Flow", retries=3)
@@ -304,16 +307,20 @@ def ingest_data(
     print("done")
 ```
 
-`Task` are not required for flows but task are special because they can receive metadata about upstream dependencies and the state of those dependencies before the function is run which gives you the opportunity to have a task wait on the completion of another task before executing
+`Task` are not required for flows but task are special because they can receive metadata about upstream dependencies and
+the state of those dependencies before the function is run which gives you the opportunity to have a task wait on the
+completion of another task before executing
 
-We can add the `log_prints` in order to print out the task, and we can also add the `retries` for automatic retries because we are calling data from an external source so if it failed we can have it automatically retry
+We can add the `log_prints` in order to print out the task, and we can also add the `retries` for automatic retries
+because we are calling data from an external source so if it failed we can have it automatically retry
 
 In order to make sure it indeed managed to insert the data run the command in postgres to delete the table
 
 ### Initial Test of the Prefect
 
 ```postgresql
-delete from yellow_taxi_data;
+delete
+from yellow_taxi_data;
 ```
 
 In order to check if we really managed to enter the data, we need to delete the table to start from the start
@@ -354,14 +361,14 @@ prefect orion start
 
 ### Post-solution thoughts about the problem
 
-Most likely the error appeared due to the first run of the python script with prefect, and then afterwards deleted the table and re-run the program for the documentation.
+Most likely the error appeared due to the first run of the python script with prefect, and then afterwards deleted the
+table and re-run the program for the documentation.
 
 ---
 
 By visiting the `http://127.0.0.1:4200`, we will be able to view the prefect runs locally.
 
 ![](https://i.imgur.com/rzVNOGM.png)
-
 
 ## Resources
 
