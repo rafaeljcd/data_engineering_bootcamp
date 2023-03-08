@@ -32,6 +32,8 @@
 
 - ### [Introduction to Workflow orchestration](2_2_1_Introduction_to_Workflow_orchestration.md)
 
+- ### [Introduction to Prefect Concepts](2_2_2_Introduction_to_Prefect_Concepts.md)
+
 ---
 
 ## Technologies

@@ -106,11 +106,12 @@ With that said it's always recommended to find the tool that works best for you 
 - [Youtube - 2.2.1 - Introduction to Workflow orchestration](https://www.youtube.com/watch?v=8oLs6pzHp68)
 - [Blog - State of the Data Engineering 2022](https://lakefs.io/blog/the-state-of-data-engineering-2022/)
 - [Blog - Core Features of workflow orchestration](https://towardsdatascience.com/workflow-orchestration-vs-data-orchestration-are-those-different-a661c46d2e88)
+- [Link to the image directory](files/week2/2_2_1_files)
 
 ---
 
 ## Page
 
-| Previous                        | table of contents      |
-|---------------------------------|------------------------|
-| [Data Lake](2_1_1_Data_Lake.md) | [Readme.md](README.md) |
+| Previous                        | table of contents      | Next                                                                          |
+|---------------------------------|------------------------|-------------------------------------------------------------------------------|
+| [Data Lake](2_1_1_Data_Lake.md) | [Readme.md](README.md) | [Introduction to Prefect Concepts](2_2_2_Introduction_to_Prefect_Concepts.md) |
